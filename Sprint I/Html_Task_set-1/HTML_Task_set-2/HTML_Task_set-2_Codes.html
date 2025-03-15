@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML_Task_set-2_Codes</title>
+  <style>
+    .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+ 
+}
+     .styled-table {
+      table,th, td{
+        border: 1px solid black;
+        padding: 5px;
+      }
+        }
+      
+  </style>
+</head>
+<body>
+  <h1 style="text-align: center;">HTML Table</h1>
+  <h2 style="text-align: center;">EX 1: Basic HTML Table   </h2>
+  <!--EX 1: Basic HTML Table -->
+    <table style="border: 1px;margin: auto;" >
+        <tr>
+            <th>Company</th>
+            <th>Contact</th>
+            <th>Country</th>
+        </tr>
+        <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Maria Anders</td>
+            <td>Germany</td>
+        </tr>
+        <tr>
+            <td>Centro comercial Moctezuma</td>
+            <td>Francisco Chang</td>
+            <td>Mexico</td>
+        </tr>
+        <tr>
+            <td>Ernst Handel</td>
+            <td>Roland Mendel</td>
+            <td>Austria</td>
+        </tr>
+        <tr>
+            <td>Island Trading</td>
+            <td>Helen Bennett</td>
+            <td>UK</td>
+        </tr>
+        <tr>
+            <td>Laughing Bacchus Winecellars</td>
+            <td>Yoshi Tannamuri</td>
+            <td>Canada</td>
+        </tr>
+        <tr>
+            <td>Magazzini Alimentari Riuniti</td>
+            <td>Giovanni Rovelli</td>
+            <td>Italy</td>
+        </tr>
+    </table>
+
+    <!-- EX 2: Simple Table View -->
+    <h2 style="text-align: center;">  EX 2: Simple Table View </h2>
+
+    <div>
+      <table style="border: 1px solid black;margin: auto; margin-top: 20px;">
+        <tr>
+          <th style="border: 1px solid black;">Country</th>
+          <th style="border: 1px solid black;">Capital</th>
+          <th style="border: 1px solid black;">Population</th>
+        </tr>
+        <tr>
+          <td style="border: 1px solid black;">USA</td>
+          <td style="border: 1px solid black;">Washington,D.C.</td>
+          <td style="border: 1px solid black;">328 million</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid black;">India</td>
+          <td style="border: 1px solid black;">New Delhi</td>
+          <td style="border: 1px solid black;">1.366 billion</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid black;">Japan</td>
+          <td style="border: 1px solid black;">Tokyo</td>
+          <td style="border: 1px solid black;">126 million</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Ex 3 : Using Colspan -->
+    <h2 style="text-align: center;"> Ex 3 : Using Colspan</h2>
+    
+    
+      <table class="styled-table" style="margin: auto;margin-top: 20px; border-collapse: collapse;">
+        <tr>
+            <th >Name</th>
+            <th>Expense</th>
+        </tr>
+        <tr>
+            <td>Arun</td>
+            <td>$10</td>
+        </tr>
+        <tr>
+            <td>Priya</td>
+            <td>$8</td>
+        </tr>
+        <tr >
+            <td colspan="2"style="text-align: center;">Sum: $18</td>
+        </tr>
+    </table>
+  
+  <!-- Ex 4 : Table with Name & Age -->
+  <h2 style="text-align: center;"> Ex 4 : Table with Name & Age </h2>
+   
+  <table class="styled-table" style="width:40%;margin: auto;margin-top: 20px;border-collapse: collapse;">
+    <tr>
+      <th colspan="2">FULL NAME</th>
+      <th>AGE</th>
+    </tr>
+    <tr>
+      <td>Fabio</td>
+      <td>Cimo</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>Jasmin</td>
+      <td>Brown</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <td>James</td>
+      <td>Wick</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <td>Donald</td>
+      <td>Dawn</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <td colspan="2">Average Age</td>
+      <td>22</td>
+    </tr>
+  </table>
+
+  <!-- Ex 5 : Colspan & Rowspan Usage -->
+
+  <h2 style="text-align: center;"> Ex 5 : Colspan & Rowspan Usage </h2>
+
+  <table class="styled-table" style="margin: auto;width: 350px;margin-top: 20px;border: 1px solid black;">
+    <caption>Combining Colspan and Rowspan </caption>
+    <tr>
+      <tr>
+        <th colspan="2" rowspan="2">Header (spans 2 columns and 2 rows)</th>
+        <td>data</td>
+    </tr>
+    <tr>
+        <td>data</td>
+    </tr>
+    <tr>
+        <td>data</td>
+        <td>data</td>
+        <td>data</td>
+    </tr>
+      
+    </tr>
+
+  </table>
+
+  <!-- Ex 6 : Complex Table Structure -->
+  <h2 style="text-align: center;"> Ex 6 : Complex Table Structure</h2>
+   <div style="display: inline block;border: 2px solid black;margin: auto;padding: 1px;width:400px;padding: 5px;margin-top: 20px;">
+    <table class="styled-table" style="margin: auto;width: 400px;border: 1px solid black; border-radius:2px;">
+      <tr><th colspan="5">number</th></tr>
+      <tr><td rowspan="2">1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+      <tr><td>6</td><td colspan="3">7</td></tr>
+      <tr><td>8</td><td>9</td><td rowspan="2">10</td><td>11</td><td>12</td></tr>
+      <tr><td>13</td><td>14</td><td>15</td><td>16</td></tr>
+    </table>
+
+   </div>
+
+   <!-- Ex 7 :Time Table -->
+   <h2 style="text-align: center;">  Ex 7 :Time Table</h2>
+   <h1 style="text-align: center;">Time Table</h1>
+   <table class="styled-table" style="border-collapse: collapse;border: 2px;margin: auto;">
+       <tr>
+           <th>Mon</th>
+           <th>Tues</th>
+           <th>Wed</th>
+           <th>Thurs</th>
+           <th>Fri</th>
+       </tr>
+       <tr>
+           <td>Science</td>
+           <td>Maths</td>
+           <td>Science</td>
+           <td>Maths</td>
+           <td>Arts</td>
+       </tr>
+       <tr>
+           <td>Science</td>
+           <td>Maths</td>
+           <td>Science</td>
+           <td>Maths</td>
+           <td>Arts</td>
+       </tr>
+       <tr>
+           <td>Science</td>
+           <td>Maths</td>
+           <td>Science</td>
+           <td>Maths</td>
+           <td>Arts</td>
+       </tr>
+       <tr>
+           <td colspan="5" style="text-align: center;">Lunch</td>
+       </tr>
+       <tr>
+           <td>Science</td>
+           <td>Maths</td>
+           <td>Science</td>
+           <td>Maths</td>
+           <td>Project</td>
+       </tr>
+       <tr>
+           <td>Science</td>
+           <td>Maths</td>
+           <td>Science</td>
+           <td>Maths</td>
+           <td></td>
+       </tr>
+   </table>
+
+   <hr>
+
+   <!-- Ex 8 : Adding Images -->
+
+   <h2 style="text-align: center;">Using Image in HTML</h2>
+    <img class="center" src="https://d8it4huxumps7.cloudfront.net/bites/wp-content/banners/2023/8/64dcc893c5140_html_vs_css.jpg" alt="Sample Image" height="200" width="300">
+
+    <hr>
+
+    <!-- Ex 9 : Simple HTML Form -->
+     <h2 style="text-align: center;">Ex 9 : Simple HTML Form    </h2>
+     <div style="text-align: center;">
+      <h1>Please Fill And Submit Form</h1>
+      <hr width="100%"; size="2">
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter Your Name"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter Your Email"><br><br>
+        <input type="submit" value="Submit">
+        
+    </form>
+
+    <hr>
+     </div>
+
+     <!-- Ex 10 : Radio Buttons in Form -->
+
+     <h2 style="text-align: center;">Ex 10 : Radio Buttons in Form </h2>
+     <h1 style="text-align: center;">Please Fill And Submit Form</h1>
+    <div style="text-align: center;">
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter Your Name"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter Your Email"><br><br>
+        <label>Select a color you like:</label><br>
+        <input type="radio" id="red" name="color" value="red">
+        <label for="red">Red</label><br>
+        <input type="radio" id="green" name="color" value="green">
+        <label for="green">Green</label><br>
+        <input type="radio" id="blue" name="color" value="blue">
+        <label for="blue">Blue</label><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    </div>
+
+    <hr>
+
+    <h2 style="text-align: center;">Task 11: Dropdown Select</h2>
+    <h1 style="text-align: center;">Please Fill And Submit Form</h1>
+    <div style="text-align: center;">
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter Your Name"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter Your Email"><br><br>
+        <label>Select a color you like:</label><br>
+        <input type="radio" id="red" name="color" value="red">
+        <label for="red">Red</label><br>
+        <input type="radio" id="green" name="color" value="green">
+        <label for="green">Green</label><br>
+        <input type="radio" id="blue" name="color" value="blue">
+        <label for="blue">Blue</label><br><br>
+        <label>Select your favorite color:</label><br>
+        <select id="color" name="color">
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="yellow">Yellow</option>
+        </select><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    </div>
+
+    <hr>
+
+    <h2 style="text-align: center;">Ex 12 : Checkboxes in Form </h2>
+    <h1 style="text-align: center;">Please Fill And Submit Form</h1>
+    <div style="text-align: center;">
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter Your Name"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter Your Email"><br><br>
+        <label>Select a color you like:</label><br>
+        <input type="radio" id="red" name="color" value="red">
+        <label for="red">Red</label><br>
+        <input type="radio" id="green" name="color" value="green">
+        <label for="green">Green</label><br>
+        <input type="radio" id="blue" name="color" value="blue">
+        <label for="blue">Blue</label><br><br>
+        <label>Select your favorite color:</label><br>
+        <select id="color" name="color" >
+            <option value="red" >Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="yellow">Yellow</option>
+        </select><br><br>
+        <label>Choose your skill level:</label><br>
+        <input type="checkbox" id="beginner" name="skill" value="beginner">
+        <label for="beginner">Beginner</label><br>
+        <input type="checkbox" id="intermediate" name="skill" value="intermediate">
+        <label for="intermediate">Intermediate</label><br>
+        <input type="checkbox" id="advanced" name="skill" value="advanced">
+        <label for="advanced">Advanced</label><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    </div>
+    <hr width="100%" size="2">
+
+    <!-- Task 13: Image Showcasing -->
+    <h1>Image Showcase Using Div Tag</h1>
+    <div>
+        <img src="https://live.staticflickr.com/65535/4711430801_dc15635f51_b.jpg" alt="Beautiful Sunset" height="200" width="300">
+        <p>This is a stunning view of a sunset over the ocean. The golden hues reflecting on the water create a mesmerizing scene that brings tranquility and peace to the mind.</p>
+    </div>
+    <div>
+        <img src="https://images.stockcake.com/public/9/2/7/9278723d-3894-4998-b552-7734ce77b1da_large/majestic-mountain-sunset-stockcake.jpg" alt="Majestic Mountains" height="200" width="300">
+        <p>Behold the majestic mountains standing tall and proud. Their snow-capped peaks touch the sky, and their valleys hide secrets waiting to be explored. A paradise for adventure seekers and nature lovers.</p>
+    </div>
+
+    <hr>
+
+    <!-- Task 14: Embedding Videos -->
+     <h1>Task 14: Embedding Videos</h1>
+    <h2>Using Videos in HTML</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <hr>
+
+    <!-- Task 15: Advanced Table with Summary -->
+    <h1 style="text-align: center;">Ex 15 : Advanced Table with Summary</h1>
+    <div style="display: inline block;border: 2px solid black;margin: auto;padding: 1px;width:400px;padding: 5px;margin-top: 20px;">
+      <h3 style="text-align: center;margin: auto;">HTML Table Example</h3>
+  
+      <table class="styled-table" style="margin: auto;width: 400px;border: 1px solid black; border-radius:2px;padding: 7px;">
+        <tr>
+            <th colspan="2">Student Name</th>
+            <th colspan="3">Labs</th>
+            <th rowspan="2">Avg</th>
+        </tr>
+        <tr>
+          <th>First</th>
+          <th>Second</th>
+          <th>Lab1</th>
+          <th>Lab2</th>
+          <th>Lab3</th>
+        </tr>
+        <tr>
+            <td>Sol </td>
+            <td>Rosenberg</td>
+            <td>100</td>
+            <td>100</td>
+            <td>100</td>
+            <td>100.0</td>
+        </tr>
+        <tr>
+            <td>Frank </td>
+            <td>Rizzo</td>
+            <td>50</td>
+            <td>60</td>
+            <td>90</td>
+            <td>66.6</td>
+        </tr>
+        <tr>
+            <td>Ali </td>
+            <td>Kam</td>
+            <td>90</td>
+            <td>80</td>
+            <td>60</td>
+            <td>76.6</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Summary</td>
+            <td>Avg</td>
+            <td>80.0</td>
+            <td>80.0</td>
+            <td>83.3</td>
+            <td>81.1</td>
+        </tr>
+        <tr>
+            
+            <td>Min</td>
+            <td>50</td>
+            <td>60</td>
+            <td>60</td>
+            <td>66.6</td>
+        </tr>
+    </table>
+
+    </div>
+    
+
+
+
+   
+
+</body>
+</html>
