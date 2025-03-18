@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined HTML Tasks</title>
+    <style>
+        .header_color{
+            color: rgb(136, 136, 235);
+        }
+        aside {
+  width: 30%;
+  padding-left: 15px;
+  margin-left: 15px;
+  float: right;
+  font-style: italic;
+}
+        .hr-lines::before,.hr-lines::after {
+    display: inline-block;
+    content: "";
+    border-top: .2rem solid black;
+    width: 20rem;
+    margin: 0 4rem;
+    transform: translateY(-1rem);
+
+}
+        .title-bar {
+            background-color: blue;
+            color: white;
+            padding: 10px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Task 1: Basic Website Layout -->
+     
+    <h1 style="text-align: center;">Task 1: Basic Website Layout</h1>
+    <div style="border: 5px solid black;padding: 5px;display: block; margin-bottom: 20px;">
+      <header>
+        <h1 style="text-align: center;">My exciting website!</h1>
+    </header>
+    <nav style="background-color: black;padding: 10px;">
+        <a href="#" style="color: white;font-weight: bold;font-size: 180%;">Home</a><br> 
+        <a href="#" style="color: white;font-weight: bold;font-size: 180%;">Blog</a> <br>
+        <a href="#" style="color: white;font-weight: bold;font-size: 180%;">About Us</a> <br>
+        <a href="#" style="color: white;font-weight: bold;font-size: 180%;">Our History</a> <br>
+        <a href="#" style="color: white;font-weight: bold;font-size: 180%;">Contacts</a>
+    </nav>
+    <section>
+        <h2>An Exciting Blog Post</h2>
+        <img src="https://img.freepik.com/premium-vector/delivery-concept-colorful-parachute-carrying-gift-boxes-light-blue-sky-background_74669-176.jpg" alt="Blog Image" width="300">
+        <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
+        <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+        <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.</p>
+    </section>
+
+    </div>
+
+    <hr size="2">
+    
+    <!-- Task 2: Photo Gallery -->
+    <h1 style="text-align: center;">Task 2: Photo Gallery</h1> <hr size="2">
+    <h1 style="text-align: center;font-size: 30px;" class="hr-lines">Welcome UI Photo Gallery </h1>
+    <div>
+        <img src="https://t3.ftcdn.net/jpg/08/34/99/82/360_F_834998233_30xneq8xGds2FkXLEi8t3jHtHtGoDiL0.jpg" alt="Image 1" width="30%" height="45%" style="margin-left: 20px;">
+        <img src="https://thumbs.dreamstime.com/b/scenic-vista-california-state-route-sr-one-most-beautiful-coastlines-world-30995714.jpg" alt="Image 2" width="30%" height="45%" style="margin-left: 20px;">
+        <img src="https://images.squarespace-cdn.com/content/v1/55b21730e4b03b6304db5cfd/1601408270444-MTGMCK5ID65RPSSV18M1/Belted-Kingfisher-Portrait-9814w3.jpg" alt="Image 3" width="30%" height="45%" style="margin-left: 20px;">
+    </div>
+    <p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, voluptatibus eaque ipsam illo nam natus blanditiis quisquam aut voluptatem possimus perferendis tempora, harum reprehenderit et ut quasi accusantium explicabo assumenda dicta. Tempore voluptate non, enim id corrupti impedit consectetur quaerat. Praesentium cumque incidunt suscipit blanditiis eligendi nulla vel?</p>
+    <hr size="2">
+    <footer style="text-align: center;">
+        <p>© 2023 My Simple Web Page. All rights reserved.</p>
+    </footer>
+    <hr>
+
+    <!-- Task 3: Registration Form -->
+    <h1 style="text-align: center;margin-top: 40px;">Task 3: Registration Form</h1>
+    <h1 style="text-align: center;" class="hr-lines">Register Here</h1>
+    <form style="text-align: center;">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email"><br><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" placeholder="Enter your age"><br><br>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob"><br><br>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"><br><br>
+        <label>Select your gender:</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label><br><br>
+        <label for="skill">Choose your skill level:</label>
+        <select id="skill" name="skill">
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+        </select><br><br>
+        <label for="color">Select your favorite color:</label>
+        <input type="color" id="color" name="color"><br><br>
+        <label for="fathername">Enter Your Father Name:</label>
+        <input id="f-name" name="f-name" placeholder="Enter your Father name"><br><br>
+        <label>Choose your language:</label>
+        <input type="checkbox" id="tamil" name="language" value="tamil">
+        <label for="tamil">Tamil</label>
+        <input type="checkbox" id="english" name="language" value="english">
+        <label for="english">English</label>
+        <input type="checkbox" id="malayalam" name="language" value="malayalam">
+        <label for="malayalam">Malayalam</label><br><br>
+        <label for="Hobbies">Hobbies</label>
+        <input type="text" id="Hobbies" name="Hobbies" placeholder="Enter Your Hobbies"><br><br>
+        <label for="Address">Address:</label>
+        <textarea id="Address" name="Address" placeholder="Enter your Address"></textarea><br><br>
+        
+        
+        <input type="submit" value="Submit">
+    </form>
+    <hr>
+
+    <!-- Task 4: Contact Us Page -->
+    <h1>Task 4: Contact Us Page</h1>
+    <div style="text-align: center;">
+        <h1 style="text-align: center;">Contact Us</h1>
+    <p>If you have any questions or feedback, please feel free to contact us:</p>
+    <p><strong>Email:</strong> contact@example.com</p>
+    <p><strong>Phone:</strong> +123-456-7890</p>
+    <p>You can also visit our office:</p>
+    <p><em>123 Main Street</em><br>
+    <em>Cityville, State 12345</em><br>
+    <em>United States</em></p>
+    <img src="https://w7.pngwing.com/pngs/987/23/png-transparent-printed-t-shirt-clothing-sizes-t-shirt-tshirt-blue-navy-blue-thumbnail.png" alt="Product Image" width="200" style="margin-right: 20%;">
+    <img src="https://w7.pngwing.com/pngs/987/23/png-transparent-printed-t-shirt-clothing-sizes-t-shirt-tshirt-blue-navy-blue-thumbnail.png" alt="Product Image" width="200" style="margin-left: 20%;">
+    <h2>Mens Casual Premium Slim Fit T-Shirts</h2>
+    <hr>
+    </div>
+
+    <!-- Task 5: Informational Webpage (Kitten Kare) -->
+    <h1>Task 5: Informational Webpage (Kitten Kare)</h1>
+     <div style="border: 5px solid black;padding: 5px;display: block; margin-bottom: 20px;">
+        <header>
+            <h1 style="background-color: rgb(104, 111, 149);margin: 1px;padding: 20px;">Kitten Kare</h1>
+            <nav style="background-color: brown;padding: 10px;">
+                <a style="color: white;font-size: larger;">  <br>Home |</a> 
+                <a style="color: white;font-size: larger;">About |</a> 
+                <a style="color: white;font-size: larger;">Services</a>
+            </nav>
+        </header>
+        <aside>
+            <h3>Cat Body Types</h3>
+            <ul>
+                <li>Oriental</li>
+                <li>Foreign</li>
+                <li>Semi-Foreign</li>
+                <li>Semi-Cobby</li>
+                <li>Cobby</li>
+            </ul>
+        </aside>
+        <section style="margin-left: 30px;">
+            <h2>Welcome!</h2>
+            <img src="https://wildlifeimages.org/wp-content/uploads/2024/03/0019_AdobeStock_223653386.jpg"  alt="Kitten Image" width="25%">
+            <p>The domestic cat (Felis catus or Felis silvestris catus) is a small, usually furry, domesticated, carnivorous mammal. It is often called the housecat when kept as an indoor pet or simply the cat when there is no need to distinguish it from other felids and felines. Cats are valued by humans for companionship and ability to hunt vermin and household pests. They are primarily nocturnal.</p>
+        </section>
+        
+
+     </div>
+     <hr>
+    
+    
+
+    <!-- Task 6: Blog Page with Sidebar -->
+    <h1>Task 6: Blog Page with Sidebar</h1>
+    <div style="background-color: rgb(98, 98, 255);width: 1230px;height: 100%;padding: 10px;">
+        <div style="background-color: white;width: 1123px;border-radius: 7px;margin: auto;padding: 20px;">
+            <header>
+                <h1 style="font-size: 40px;padding: 15px;">My Awesome Blog 
+                    <aside>
+                        <nav style="font-size: 25px;font-style: normal;margin-left: 10px;" >
+                            <a href="#" >Home </a> 
+                            <a href="#" style="margin-left: 9px;">About</a>
+                        </nav>
+                    </aside>
+                </h1>
+                
+            </header>
+                <img src="https://images.vexels.com/content/194700/preview/buy-online-slider-template-4261dd.png" alt="Thumnail" width="1123px" height="350px">
+           
+            <aside style="background-color: rgb(240, 179, 65);width: 250px;margin-top: 20px;">
+                <h3 style="background-color: rgb(249, 55, 55);width: 170px;color: white;font-style: normal;padding: 10px;">Useful Links</h3>
+                <ul>
+                    <li><a href="#">AzizAli.com</a></li>
+                    <li><a href="#">IloveCoding.org</a></li>
+                </ul>
+            </aside>
+            <article>
+                <h2 style="font-weight: bold;"><a href="#">Title of the first blog</a></h2>
+                <p>By Aziz Ali</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue commodo neque, nec lacinia leo consequat id. Vivamus volutpat dolor quis odio fermentum aliquet non non tellus. Morbi suscipit sapien eget neque eleifend, sit amet placerat massa scelerisque.</p>
+                <br><hr size="2">
+                <h2 style="font-weight: bold;"><a href="#">Title of the first blog</a></h2>
+                <p>By Aziz Ali</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue commodo neque, nec lacinia leo consequat id. Vivamus volutpat dolor quis odio fermentum aliquet non non tellus. Morbi suscipit sapien eget neque eleifend, sit amet placerat massa scelerisque.</p>
+                <br><hr size="2">
+            </article>
+
+        </div>
+    </div>
+    
+    <hr>
+
+    <!-- Task 7: Personal Profile Page -->
+    <h1>Task 7: Personal Profile Page</h1>
+     <div style="background-color: rgb(47, 45, 45);width: 1230px;height:100%;color: white;padding: 7px;">
+       
+    <h1 class="header_color" style="font-size: 70px;">About Victoria Kirst</h1>
+    <p>My name is Victoria and I am <span style="color: yellow;">jolly</span>, <span style="color: yellow;">clumsy</span>, and <span style="color: yellow;">four-eyed</span>.</p>
+    <h2 class="header_color">My Classes This Quarter</h2>
+    <ul>
+        <li>CSE 451 - Operating Systems</li>
+        <li>CSE 471 - Computer Design and Organization</li>
+        <li>PHYS 121 - Physics: Mechanics</li>
+        <li>CSE 498 - Research w/ Prof. Luis Ceze</li>
+    </ul>
+    <h2 class="header_color">My Favorite Movies</h2>
+    <p>(I actually don't watch too many movies, so...here goes!)</p>
+    <ol>
+        <li>The last 30 minutes of Forrest Gump (<span style="color: red;">IMDB</span>)</li>
+        <li>Star Trek Episode V with Zazu (<span style="color: red;">IMDB</span>)</li>
+        <li>Fight Club (not really, but I've seen like 3 movies total so this is my 3rd fave by technicality) (<span style="color: red;">IMDB</span>)</li>
+    </ol>
+    <h2 class="header_color">My Moods</h2>
+    <p>Happy: <img src="https://static.vecteezy.com/system/resources/previews/021/747/128/non_2x/render-illustration-design-of-cute-happy-face-growing-out-of-the-ground-happiness-concept-mental-health-concept-generative-ai-photo.jpg" alt="Happy" width="500px" height="334"> Sad: <img src="https://static.vecteezy.com/system/resources/thumbnails/034/381/567/small/illustration-of-a-sad-emoji-kid-on-a-rainy-day-with-a-natural-background-ai-generated-photo.jpg" alt="Sad" width="500px" height="334"></p>
+    <h2 class="header_color">Fun Facts About My Neighbors</h2>
+    <ul>
+        <li>Sue Smith: <em>Effervescent</em> is a word that describes her.</li>
+        <li>Bill Thompson: Loves playing <em>Yu-Gi-Oh</em>.</li>
+    </ul>
+    <hr>
+
+     </div>
+    
+
+    <!-- Task 8: Course and Interests Page -->
+    <h1>Task 8: Course and Interests Page</h1>
+    <div style="width:320px;float: right;margin-top: 80px;">
+            
+        <img src="https://thumbs.dreamstime.com/z/puppy-small-laboratory-whippet-chemist-52154212.jpg" alt="Fun Image" width="390px" height="300px" style="float: right;margin: auto;margin-right: 80px;">
+           
+    </div>
+    
+    <div style="width: 726px;float: left;margin-left: 20px;">
+        <div style="background-color: rgb(145, 193, 255);color: rgb(40, 40, 255);">
+            <h2 style="font-size: 40px;height: 40px;">Courses</h2>
+            
+        </div>
+        
+        <p>Here are some courses I've taken:</p>
+        <table style="width: 550px;margin-bottom: 20px;">
+            <tr>
+                <th>Course Number</th>
+                <th>Course Title</th>
+                <th>Semester Taken</th>
+            </tr>
+            <tr>
+                <td>6.813</td>
+                <td>User Interface Design</td>
+                <td>Spring 2014</td>
+            </tr>
+            <tr>
+                <td>6.034</td>
+                <td>Artificial Intelligence</td>
+                <td>Fall 2013</td>
+            </tr>
+            <tr>
+                <td>6.006</td>
+                <td>Introduction to Algorithms</td>
+                <td>Fall 2013</td>
+            </tr>
+            <tr>
+                <td>6.867</td>
+                <td>Machine Learning</td>
+                <td>Fall 2013</td>
+            </tr>
+            <tr>
+                <td>6.830</td>
+                <td>Database Systems</td>
+                <td>Fall 2012</td>
+            </tr>
+        </table>
+
+        <div >
+            <h2 style="background-color: rgb(145, 193, 255);color: rgb(40, 40, 255);">Interests</h2>
+        </div>
+
+        <p>I am interested <strong>HCI</strong>, memes, and youtube videos.</p>
+    </div>
+        
+    
+    
+    
+</body>
+</html>
