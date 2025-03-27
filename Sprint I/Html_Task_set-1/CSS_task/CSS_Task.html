@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .div1 {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+        margin: auto;
+        text-align: center;
+        width: 20%;
+        padding: 5px;
+        background-color: beige;
+        gap: 3px;
+      }
+      .div2 {
+        border-radius: 5px;
+        width: 100%;
+        background-color: white;
+        border: 1px solid black;
+        margin: auto;
+        padding: -10px;
+        justify-content: center;
+        margin-bottom: 2px;
+      }
+      .div3 {
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        border: 1px solid black;
+        margin: auto;
+        padding: -10px;
+        justify-content: center;
+        border-spacing: 5px;
+        margin-bottom: 2px;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "h j"
+          "g j";
+        column-gap: 2px;
+        gap: 3px;
+        text-align: center;
+        justify-content: center;
+      }
+      .a {
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 5px;
+        text-align: center;
+        align-items: center;
+      }
+      .layout {
+        display: grid;
+        width: 35%;
+        margin: auto;
+        text-align: center;
+        grid-template-columns: auto auto auto auto ;
+        border: 2px solid white;
+        padding: 10px;
+        /* grid-template-rows: auto auto auto auto; */
+        
+        /* grid-template-areas:
+          "h h " "n n" "m an" "m s"  ; */
+        gap: 10px;
+          
+        
+      }
+      .layout > div {
+        display: grid;
+        border: 2px solid white;
+        /* border-collapse: collapse; */
+        background-color: rgba(195, 206, 216, 0.655);
+        font-size: 2rem;
+        font-family: "Times New Roman", Times, serif;
+        font-weight: bold;
+        width: 100%;
+        
+        border-radius: 5px;
+      }
+      .h{
+        grid-column: 1 /span 6;
+        height: 50px;
+        text-align: center;
+        margin: auto;
+      }
+      .n{
+        grid-column: 1 /span 6;
+      }
+      .m{
+        /* margin-right: 60px; */
+        /* width: 550px; */
+        /* height: 200px; */
+        grid-column: 1 /span 4;
+        margin-right: 80px;
+    
+        grid-row: 3 / span 8;
+      }
+      .an{
+        grid-column: 3/ span ;
+        grid-template-rows: 70px;
+        padding-right: 17px;
+        text-align: center;
+        justify-content: center;
+      }
+      .ann{
+        grid-row: 4/ span 7;
+        padding-right: 17px;
+        padding-bottom: 20px;
+        text-align: center;
+        justify-content: center;
+      }
+      .s{
+        grid-column: 1 /span 6;
+      }
+      
+
+      table,
+      tr,
+      td {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        width: 40%;
+        margin: auto;
+        border: 2px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+      }
+
+      .containers{
+        display: grid;grid-template-columns:repeat(3, 1fr);
+        grid-template-rows: 50px 50px 100px 100px 50px;
+        grid-template-areas:
+        "l l l"
+        "N N N"
+        "F F F"
+        "c1 c2 c3"
+        "co co co";
+        gap: 10px;
+        padding: 10px;
+        min-height: 300px;
+        width: 70%;
+        margin: auto;
+        
+      }
+      .L{
+        grid-area: l;
+        /* border: 2px solid black; */
+        background-color: rgb(231, 222, 239);
+        text-align: center;
+        place-content: center;
+        font-weight: bold;
+        font-size: 40px;
+        border-radius: 5px;
+      }
+      .N{
+        grid-area: N;
+        /* border: 2px solid black; */
+        background-color: rgb(231, 222, 239);
+        color: black;
+        text-align: center;
+        place-content: center;
+        word-spacing: 20px;
+        border-radius: 5px;
+      }
+      .F{
+        grid-area: F;
+        /* border: 2px solid black; */
+        background-color: rgb(231, 222, 239);
+        color: black;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+      .c1{
+        grid-area: c1;
+        background-color: rgb(231, 222, 239);
+        color: black;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+      .c2{
+        grid-area: c2;
+        background-color: rgb(231, 222, 239);
+        color: black;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+      .c3{
+        grid-area: c3;
+        background-color: rgb(231, 222, 239);
+        color: black;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+      .co{
+        grid-area: co;
+        background-color: rgb(231, 222, 239);
+        color: black;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+      nav{
+        display: block;
+        transform-origin: top center;
+        animation: showMenu 0.5s
+        ease-in-out forwards;
+      }
+
+      @keyframes showMenu{
+        0%{
+          transform: scale(0);
+
+        }
+        80%{
+          transform: scaleY(1,2);
+
+        }
+        100%{
+          transform: scaleY(1);
+        }
+      }
+
+      nav a:hover,
+      nav a:focus{
+        transform: scale(1.5);
+        transition: all 0.3s;
+      }
+
+      .containerss{
+        display: grid;
+        border: 2px solid black;
+        background-color: rgb(238, 238, 238);
+        grid-template-columns: 1fr 1fr auto;
+        grid-template-rows: 120px 50px 270px 270px 80px;
+        grid-template-areas:
+        "hr hr hr"
+        "Na Na Na"
+        "cap cap ab1"
+        "cap1 cap1 ab2"
+        "cap1 cap1 ab3"
+        "foot foot foot";
+        gap: 10px;
+        padding: 10px;
+        min-height: 300px;
+        width: 80%;
+        margin: auto;
+      }
+      .hr{
+        grid-area: hr;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        text-align: center;
+        place-content: center;
+        border-radius: 5px;
+        /* position: absolute; */
+      }
+      .Na{
+        grid-area: Na;
+        /* border: 2px solid black; */
+        background-color: rgb(35, 34, 36);
+        padding: 10px;
+        text-align: center;
+        place-content: center;
+        border-radius: 5px;
+        margin-top: -9px;
+      }
+      .cap{
+        grid-area: cap;
+        gap: 10px;
+        background-color: white;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid black;
+        float: left;
+        position: static;
+      }
+      .cap1{
+        grid-area: cap1;
+        gap: 10px;
+        background-color: white;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid black;
+        float: left;
+        position: static;
+      }
+
+      .ab1{
+        grid-area: ab1;
+        gap: 10px;
+        background-color: white;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid black;
+        float: right;
+        height: 200px;
+        position: static;
+        width: 200px;
+      }
+      .ab2{
+        grid-area: ab2;
+        gap: 10px;
+        background-color: white;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid black;
+        float: right;
+        height: 270px;
+        position: static;
+        width: 200px;
+        margin-top: -40px;
+      }
+
+      .ab3{
+        grid-area: ab3;
+        gap: 10px;
+        background-color: white;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid black;
+        float: right;
+        height: 75px;
+        position: static;
+        width: 180px;
+        margin-top: -10px;
+      }
+
+      .foot{
+        grid-area: foot;
+        background-color: rgb(194, 186, 186);
+        padding: 10px;
+        text-align: center;
+        place-content: center;
+        border-radius: 5px;
+        padding: 10px;
+      }
+      .containe{
+        display: grid;
+        background-color: rgb(255, 255, 255);
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: 80px 30px 270px 80px;
+        grid-template-areas:
+        "hh hh"
+        "nn nn"
+        "mm ss"
+        "ff ff";
+        gap: 10px;
+        padding: 10px;
+        min-height: 300px;
+        width: 40%;
+        margin: auto;
+        font-size: 25px;
+        font-weight: bold;
+      }
+      .hh{
+        grid-area: hh;
+        background-color: rgb(55, 52, 52);
+        color: white;
+        padding: 10px;
+        text-align: center;
+        place-content: center;
+        border-radius: 5px;
+      }
+      .nn{
+        grid-area: nn;
+        background-color: rgb(172, 168, 168);
+        color: white;
+        padding: 10px;
+        text-align: center;
+        place-content: center;
+        border-radius: 5px;
+        margin-top: -10px;
+      }
+      .mm{
+        grid-area: mm;
+        background-color: rgb(203, 193, 193);
+        color: black;
+        padding: 20px;
+        text-align: center;
+        place-content: center;
+        border-radius: 5px;
+        margin-left: 40px;
+        width: 15vw;
+        gap: 10px;
+      }
+      .ss{
+        grid-area: ss;
+        background-color: rgb(166, 162, 162);
+        color: black;
+        padding: 10px;
+        text-align: center;
+        place-content: center;
+        border-radius: 5px;
+        gap: 10px;
+        width: 10vw;
+      }
+      .ff{
+        grid-area: ff;
+        background-color: rgb(125, 109, 109);
+        color: white;
+        padding: 5px;
+        text-align: center;
+        place-content: center;
+        border-radius: 5px;
+      }
+
+      .containerr{
+        display: grid;
+        background-color: rgb(255, 255, 255);
+        grid-template-columns: repeat(3,1fr) ;
+        grid-template-rows: 80px 35px auto 80px;
+        grid-template-areas:
+        "hhh hhh hhh"
+        "nnn nnn nnn"
+        "sss sss sss"
+        "fff fff fff";
+        gap: 10px;
+        padding: 10px;
+        min-height: 300px;
+        width: 40%;
+        margin: auto;
+        font-size: 25px;
+        font-weight: bold;
+      }
+      .hhh{
+        grid-area: hhh;
+        background-color: rgb(67, 65, 65);
+        color: white;
+        padding: 10px;
+        text-align: center;
+        place-content: center;
+        border-radius: 5px;
+        height: 10vh;
+      }
+      .nnn{
+        grid-area: nnn;
+        background-color: rgb(123, 120, 120);
+        color: white;
+        padding: 5px;
+        text-align: center;
+        place-content: center;
+        border-radius: 5px;
+      }
+      
+      .fff{
+        grid-area: fff;
+        background-color: rgb(86, 83, 83);
+        color: white;
+        padding: 5px;
+        text-align: center;
+        place-content: center;
+        border-radius: 5px;
+        height: 7vh;
+      }
+      .display{
+        max-width: 40%;
+        min-height: 100px;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        justify-content: space-around;
+        gap: 5px;
+      }
+      .sss{
+        /* grid-area: sss; */
+        display: grid;
+        background-color: darkgrey;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 150px 200px;
+        /* grid-template-areas: 
+        "s3 s3 s3"
+        "s41 s42 s43"; */
+        border-radius: 5px;
+        gap: 20px;
+        padding: 10px;
+      }
+      .s3{
+        grid-area: s3;
+        background-color: rgb(97, 93, 93);
+        color: white;
+        padding: 10px;
+        text-align: center;
+        place-content: center;
+        border-radius: 5px;
+      }
+      .grid-layout{
+        display: grid;
+        padding: 10px;
+        background-color: darkgrey;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 100px 150px;
+        grid-template-areas:
+        "s3 s3 s3"
+        "box box1 box2";
+        gap: 10px;
+        place-content: center;
+      }
+      .box{
+        grid-area: box;
+        width: 100px;
+        height: 95px;
+        background-color: white;
+        color: white;
+        padding: 0.5rem;
+        margin: auto;
+      }
+      .box1{
+        grid-area: box1;
+        width: 100px;
+        height: 95px;
+        background-color: white;
+        color: white;
+        padding: 0.5rem;
+        margin: auto;
+      }
+      .box2{
+        grid-area: box2;
+        width: 100px;
+        height: 95px;
+        background-color: white;
+        color: white;
+        padding: 0.5rem;
+        margin: auto;
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">CSS TASKS</h1>
+
+    <div class="div1">
+      <div class="div2"><p>header</p></div>
+      <div class="div2"><p>nav</p></div>
+      <div class="container">
+        <div class="a"><p>section</p></div>
+        <div class="a" style="grid-area: j; padding: 33.5px"><p>aside</p></div>
+        <div class="a"><p>article</p></div>
+      </div>
+      <div class="div2"><p>footer</p></div>
+    </div>
+
+    <h1 style="text-align: center">CSS TASKS-2</h1>
+    <table>
+      <tr>
+        <td colspan="2">Header Section</td>
+      </tr>
+      <tr>
+        <td colspan="2">Navigation Bar</td>
+      </tr>
+      <tr>
+        <td style="width: 10%; height: 120px">Index</td>
+        <td>Content Section</td>
+      </tr>
+      <tr>
+        <td colspan="2">Footer Section</td>
+      </tr>
+    </table>
+
+    <h1 style="text-align: center;">CSS TASKS-3</h1>
+    <div class="layout">
+      <div class="h" >< Header ></div>
+      <div class="n">< nav ></nav></div>
+      <div class="m">< main ></main></div>
+      <div class="an">< aside ></aside></div>
+      <div class="ann">< section > </section></div>
+       <div class="s">< aside ></aside></div>
+      <div class="h" style=> < footer ></footer></div>
+    </div>
+
+
+    <h1 style="text-align: center">CSS TASKS-4</h1>
+    <table style="border: 5px solid blue;margin-bottom: 50px;padding: 10px;width: 50%;height: 240px;background-color: rgb(194, 243, 243);color: rgb(89, 0, 255);">
+      <tr style="border: 5px solid blue;">
+        <td style="border: 5px solid blue;" colspan="3">Header</td>
+      </tr>
+      <tr><td style="border: 5px solid blue;" rowspan="2">Menu</td><td style="border: 5px solid blue;">Main</td><td colspan="auto" style="border: 5px solid blue;">Right</td></tr>
+      <tr><td colspan="2"style="border: 5px solid blue;" >Footer</td></tr>
+    </table>
+
+
+    <h1 style="text-align: center">CSS TASKS-5</h1>
+    <main style="background-color: darkgrey;width: 40%;margin: auto;margin-bottom: 50px;padding: 20px;">
+      <div style="background-color: black;color: white;width: 30%;padding: -5px;font-size: 25px;;"><p>Page Title</p></div>
+      <div style="background-color: dimgrey;margin-top: -24.7px;width: 80%;color: white;text-align: center;"><p>Navigation</p></div>
+      <div style="padding: 2px;width: 78%;">
+        <h1 style="background-color: dimgray;padding:-10px;margin-top: -10px;color: white;text-align: center;font-size: 30px;font-weight: 100;">Introduction</h1>
+        <aside style="width: 16%;background-color: rgb(149, 145, 145);float: right;padding: 30px;color: white;">Sliderbar</aside>
+        <p style="background-color: black;text-align: center;width: 50%;color: white;padding: 30px;">Main Content area</p>
+        <h1 style="background-color: dimgray;padding:-10px;margin-top: -10px;color: white;text-align: center;font-size: 30px;font-weight: 100;margin-top: 20px;">Footer</h1>
+        
+      </div>
+    </main>
+    
+
+     
+     
+     
+    <h1 style="text-align: center">CSS TASKS-6</h1>
+    <main style="margin: auto;width: 50%;margin-bottom: 50px;">
+      <header style="background-color: rgb(255, 174, 0);color: white;text-align: center;padding-bottom: 15px;">Header</header>
+      <article style="padding-bottom: 150px;background-color: green;float: right;width: 80%;text-align: center;color: white;">article</article>
+      <nav style="background-color: blue;width: 20%;color: white;padding-bottom: 150px;">Nav</nav>
+      
+      <footer style="background-color: red;color: white;text-align: center;">Footer</footer>
+    </main>
+
+    <h1 style="text-align: center">CSS TASKS-7</h1>
+    <main style="border: 2px solid black;display: block;margin: auto;margin-bottom: 50px;width: 40%;">
+      <header style="background-color: rgb(211, 162, 236);color: white;text-align: center;padding-bottom: 15px;">Header</header>
+      <nav style="text-align: center;color: white;background-color: blueviolet;">Navigation Bar</nav>
+      <main style="padding: 30px;text-align: center;">Main Content</main>
+      <footer style="background-color: rgb(176, 84, 222);text-align: center;color: white;">Footer</footer>
+    </main>
+
+
+    <h1 style="text-align: center">CSS TASKS-8</h1>
+    <main style="border: 2px solid black;margin: auto;margin-bottom: 50px;width: 40%;">
+      <header style="background-color: rgb(211, 162, 236);color: white;text-align: center;padding-bottom: 15px;">Header</header>
+      <nav style="text-align: center;color: white;background-color: blueviolet;">Navigation Bar</nav>
+      <main style="width: 40%;padding: 31px;text-align: center;float: right;height: 34px;">Main Content</main>
+      <article style="background-color: rgb(225, 107, 230);width: 10%;padding: 30px;height: 35px;margin-bottom: 1px;">Left Panel</article>
+      <footer style="background-color: rgb(176, 84, 222);text-align: center;color: white;">Footer</footer>
+    </main>
+
+
+
+    <h1 style="text-align: center">CSS TASKS-9</h1>
+    <div style="width: 60%;margin: auto;padding: 10px;margin-bottom: 50px;">
+      <h3 style="background-color: rgb(10, 100, 100);color: white;width: 90;">Original Wireframe</h3>
+    <p style="text-align: center;">< -- 600px -- ></p>
+    <main style="display: grid;background-color: rgb(177, 241, 220);width: 100%;margin: auto;gap: 15px;position: static;font-weight: bold;">
+      <header style="background-color: cadetblue;padding: 20px;text-align: center;font-weight: bold;grid-column: 1/span 3;">Header</header>
+      <div style="display: grid;grid-template-columns: 2fr 1fr;width: 50vw;position: static;gap: 15px;">
+        <div style="height: 60%;background-color: cadetblue;text-align: center;grid-column: 1/ span 1;width: 120%;padding: 20px;margin-left: 15px;padding-bottom: 30px;margin-bottom: 10px;">
+          Intro Copy
+        </div>
+        <div style="background-color: cadetblue;text-align: center;grid-column: 3/ span 8;height: 50px;width: 130px;margin-bottom: 10x;"> 
+          Hero Image
+        </div>
+        <div style="background-color: rgb(187, 206, 40);text-align: center;grid-column: 3/ span 8;height: 20px;width: 130px;margin-top: -20px;">
+          Call to Action
+        </div>
+        <div style="background-color: cadetblue;text-align: center;font-weight: bold;grid-column: 1/ span 10;padding: 10px;margin-left: 15px;">Features</div>
+
+        
+        <div style="background-color: cadetblue;text-align: center;grid-column: 1/ span 1;width: 120%;padding: 20px;margin-left: 15px;">
+          More copy
+        </div>
+        <div style="background-color: cadetblue;text-align: center;grid-column: 3/ span 8;width: 130px;padding: 10px;">Call to Action</div>
+      </div>
+      <footer style="background-color: cadetblue;padding: 20px;text-align: center;font-weight: bold;grid-column: 1/span 3">Footer</footer>
+    </main>
+    </div>
+    
+    <h1 style="text-align: center">CSS TASKS-10</h1>
+    <main class="containers">
+      <header class="L">Logo</header>
+      <nav class="N"><a href="#">HOME</a> <a href="#">PRODUCTS</a> <a href="#">SERVICES</a> <a href="#">ABOUT</a> <a href="#">CONTACT</a></nav>
+      <article class="F">Features</article>
+      <!-- <div class="containerss">
+
+      </div> -->
+      <caption>
+        <div class="c1">Column One</div>
+        <div class="c2">Column Two</div>
+        <div class="c3">Column Three</div>
+      </caption>
+      <footer class="co">&copy; Copyright 2011 </footer>
+    </main>
+
+
+
+    <h1 style="text-align: center">CSS TASKS-11</h1>
+    
+    <main class="containerss">
+      <header class="hr">
+        <h1 style="text-align: center;font-weight: bold;font-size: 40px;">Karka UI Layout</h1>
+        <h6 style="text-align: center;margin-top: -20px;">Develop Your skills by our tech</h6>
+      
+      </header>
+      <nav class="Na">
+      <div style="float: left;">
+      <a style="color: white;margin-right: 10px;">Link</a>
+      <a style="color: white;margin-right: 10px;">Link</a>
+      <a style="color: white;">Link</a>
+      </div>
+      <a style="float: right;color: white;margin-right: 40px;">Link</a>
+    </nav>
+
+    <article class="cap">
+      <h1>TITLE HEADING</h1>
+      <h6 style="text-align: center;margin-top: -20px;float: left;">Task description, Dec 7, 2013</h6>
+      <div style="background-color: darkgray;width: auto;height: 70px;border-radius: 5px;">Image</div>
+      <p>Some text. <br>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+      </p>
+    </article>
+
+    <article class="cap1">
+      <h1>TITLE HEADING</h1>
+      <h6 style="text-align: center;margin-top: -20px;float: left;">Task description, Dec 7, 2013</h6>
+      <div style="background-color: darkgray;width: auto;height: 70px;border-radius: 5px;">Image</div>
+      <p>Some text. <br>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+      </p>
+    </article>
+
+    <aside class="ab1">
+      <h1>About Me</h1>
+      <div style="background-color: darkgray;width: auto;height: 70px;border-radius: 5px;">Image</div>
+      <p>Some text about me in offical dashboard</p>
+    </aside>
+
+    <aside class="ab2">
+      <h1>Popular Post</h1>
+      <div style="background-color: darkgray;width: auto;height: 70px;border-radius: 5px;">Image</div>
+      <div style="background-color: darkgray;width: auto;height: 70px;border-radius: 5px;">Image</div>
+      <div style="background-color: darkgray;width: auto;height: 70px;border-radius: 5px;">Image</div>
+    </aside>
+
+    <aside class="ab3">
+      <h1>Follow Me</h1>
+      <p>Some text</p>
+    </aside>
+
+    <footer class="foot">
+      <h1 style="text-align: center;">Footer</h1>
+    </footer>
+    </footer>
+
+    </main>
+
+
+    <h1 style="text-align: center">CSS TASKS-12</h1>
+    <main class="containe">
+      <header class="hh">Header</header>
+      <nav class="nn">Navigation</nav>
+      <article class="mm">Main Content</article>
+      <aside class="ss">Sidebar</aside>
+      <footer class="ff">Footer</footer>
+    </main>
+
+
+    <h1 style="text-align: center">CSS TASKS-13</h1>
+    <main class="display">
+      <header class="hhh" >Header</header>
+      <nav class="nnn">Navigation Bar</nav>
+      <main class="grid-layout" >
+        <aside class="s3">Slideshow</aside> 
+        <div class="box">1</div>
+        <div class="box1">1</div>
+        <div class="box2">1</div>
+      </main>
+      <footer class="fff">Footer</footer>
+
+    </main>
+
+    <!-- <aside class="s41">Hello</aside>
+        <aside class="s42">Hello</aside>
+        <aside class="s43">Hello</aside> -->
+
+    
+  </body>
+</html>
