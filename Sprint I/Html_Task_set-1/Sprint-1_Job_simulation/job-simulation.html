@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Simulation Platform</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: #c7beff;
+            color: white;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            height: 80px;
+            width: auto;
+        }
+        
+        /* Navigation styles */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            color: rgb(143, 49, 250);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 20px;
+            transition: color 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            color: white;
+            background-color: rgb(143, 49, 250);
+        }
+        
+        nav ul li a.active {
+            color: #e1f4ff;
+            background-color: rgb(143, 49, 250);
+        }
+        
+        /* Main content styles */
+        main {
+            margin-top: 80px;
+            padding: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .welcome-section {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: rgb(32, 29, 29);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+            position: relative;
+        }
+        @property --angle{
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+        .welcome-section::after,.welcome-section::before{
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-image: conic-gradient(from var(--angle),transparent 50%, blue, rgb(255, 56, 209));
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            z-index: -1;
+            padding: 3px;
+            border-radius: 10px;
+            animation: 2s spin linear infinite;
+        }
+        .welcome-section::before{
+            filter: blur(1.5rem);
+            opacity: 0.5;
+        }
+
+        @keyframes spin {
+            from{
+                --angle:0deg;
+            }
+            to{
+                --angle:360deg;
+            }
+            
+        }
+        
+        .welcome-section h1 {
+            color: #6da2d7;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .welcome-section p {
+            color: #70cad1;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .content-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .column {
+            flex: 1;
+            min-width: 300px;
+            background-color: #1c1f2b;
+            color: #70cad1;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: relative;
+            margin: auto;
+        }
+        .column::after,.column::before{
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-image: conic-gradient(#ff4545,#00ff99, blue, #ff0095, #ff4545);
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            z-index: -1;
+            padding: 3px;
+            border-radius: 10px;
+        }
+        .column::before{
+            filter: blur(1.5rem);
+            opacity: 0.5;
+        }
+        
+        .column h2 {
+            color: #6da2d7;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 30px;
+        }
+        
+        .services-list {
+            list-style: none;
+        }
+        
+        .services-list li {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .services-list li:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .services-list h3 {
+            color: #3498db;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .services-list h3::before {
+            content: "•";
+            color: #3498db;
+            margin-right: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        /* Footer styles */
+        footer {
+            background-color: #c7beff;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-section {
+            margin-bottom: 1.5rem;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #3498db;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        .contact-info a:hover {
+            color: #3498db;
+        }
+        
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #3498db;
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #ffffff;
+            font-size: 0.9rem;
+        }
+        button{
+            padding: 1em 2em;
+            background-color: #354cf7;
+            border: none;
+            color: #f0f0f0;
+            border-radius: 1000px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+        button::after{
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            border-radius: 1000px;
+            background-image: linear-gradient(to bottom right, #008cff, #e100ff);
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            z-index: -1;
+            padding: 3px;
+        }
+
+        button:hover{
+            z-index: 0;
+            box-shadow: 40px 0 100px #008cffd0, -40px 0 100px #e100ffd0 ;
+            cursor: pointer;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+            
+            .content-columns {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    /* <!-- Header Section --> */
+    <header>
+        <img src="https://static.vecteezy.com/system/resources/previews/008/214/517/non_2x/abstract-geometric-logo-or-infinity-line-logo-for-your-company-free-vector.jpg" alt="Company Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Main Content Area -->
+    <main>
+        <section class="welcome-section">
+            <h1>Welcome to Our Job Simulation Platform</h1>
+            <p>Prepare for your dream career with our immersive job simulation experiences. Gain practical skills, build confidence, and stand out in today's competitive job market with our realistic workplace scenarios and expert guidance.</p>
+        </section>
+        
+        <div class="content-columns">
+            <section class="column">
+                <h2>Services Offered</h2>
+                <ul class="services-list">
+                    <li>
+                        <h3>Career-Specific Simulations</h3>
+                        <p>Experience realistic job scenarios tailored to your desired career path, from software development to healthcare administration.</p>
+                    </li>
+                    <li>
+                        <h3>Skill Assessment</h3>
+                        <p>Get detailed feedback on your performance with comprehensive evaluations of both technical and soft skills.</p>
+                    </li>
+                    <li>
+                        <h3>Mentorship Program</h3>
+                        <p>Connect with industry professionals who provide personalized guidance and career advice based on your simulation results.</p>
+                    </li>
+                </ul>
+            </section>
+            
+            <section class="column">
+                <h2 >Company Introduction</h2>
+                <p>At JobSim, we believe that hands-on experience is the best preparation for career success. Our platform bridges the gap between education and employment by providing realistic job simulations across various industries.</p>
+                <p>Founded in 2020 by career development experts, we've helped thousands of users gain confidence and practical skills. Our mission is to democratize access to professional experience and help individuals from all backgrounds succeed in their chosen fields.</p>
+                <p style="margin-bottom: 50px;">What sets us apart is our commitment to authenticity - our simulations are developed in partnership with industry leaders to ensure they reflect real workplace challenges and expectations.</p>
+                <button>Read More</button>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                    <a href="tel:+18005551234">+1 (800) 555-1234</a>
+                    <a href="mailto:info@jobsim.example.com">info@jobsim.example.com</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook">Facebook</a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter">Twitter</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 Job Simulation Platform. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
