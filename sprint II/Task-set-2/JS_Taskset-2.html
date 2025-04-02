@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Taskset-2</title>
+    <script>
+      console.log("JavaScript Taskset-2 Solutions");
+      // console.log("Task 1: Variable Declarations");
+      let firstName = "John"; // camelCase
+      let under_score_case = "example"; // under_score_case
+
+      // Task 2: Constant Reassignment
+      const PI = 3.14;
+      console.log(`Value of PI: ${PI}`);
+      // PI = 3.1415; 
+      // console.log(`Updated PI: ${PI}`); // This will throw an error
+
+
+      // Task 3: Array Operations
+      let numbers = [1, 2, 3];
+      console.log(numbers[0]); // Access first element
+      numbers.push(4); // Add element
+      numbers.pop(); // Remove last element
+
+      // Task 4: Sum Two Numbers
+      let a = 10,
+        b = 20;
+      console.log(`Sum: ${a + b}`);
+
+      // Task 5: Area of Circle
+      let radius = 5;
+      let areaCircle = Math.PI * radius ** 2;
+      console.log(`Circle Area: ${areaCircle.toFixed(2)}`);
+
+      // Task 6: Area of Rectangle
+      let length = 10,
+        width = 5;
+      console.log(`Rectangle Area: ${length * width}`);
+
+      // Task 7: Area of Triangle
+      let base = 8,
+        height = 6;
+      console.log(`Triangle Area: ${(base * height) / 2}`);
+
+      console.log("Task 8: Simple Calculator");
+      function add(x, y) {
+        return x + y;
+      }
+      function subtract(x, y) {
+        return x - y;
+      }
+      function multiply(x, y) {
+        return x * y;
+      }
+      function divide(x, y) {
+        return x / y;
+      }
+      console.log(`Addition: ${add(5, 3)}`); 
+      console.log(`Subtraction: ${subtract(5, 3)}`);
+      console.log(`Multiplication: ${multiply(5, 3)}`);
+      console.log(`Division: ${divide(5, 3)}`);
+
+      // Task 9: Assignment Operators
+      let x = 10;
+      x += 5; // x = 15
+      x -= 3; // x = 12
+      x *= 2; // x = 24
+      x /= 4; // x = 6
+      console.log(`Final x: ${x}`);
+
+      // Task 10: Increment/Decrement
+      let count = 5;
+      count++; // 6
+      count--; // 5
+      console.log(`Count: ${count}`);
+
+      // Task 11: Comparison Operators
+      let num1 = 5,
+        num2 = "5";
+      console.log(num1 == num2); // true (value)
+      console.log(num1 === num2); // false (type)
+      console.log(num1 != num2); // false
+      console.log(num1 !== num2); // true
+      console.log(10 > 9); // true
+
+      // Task 12: Logical Operators
+      let bool1 = true,
+        bool2 = false;
+      console.log(bool1 && bool2); // false
+      console.log(bool1 || bool2); // true
+      console.log(!bool1); // false
+
+      // Task 13: Swap Variables
+      let m = 5,
+        n = 10;
+      [m, n] = [n, m]; // Destructuring swap
+      console.log(`m: ${m}, n: ${n}`);
+
+      // Task 14: Average of Numbers
+      let nums = [10, 20, 30];
+      let average = nums.reduce((a, b) => a + b, 0) / nums.length;
+      console.log(`Average: ${average}`);
+
+      // Task 15: Arithmetic Chain
+      let aVal = 10,
+        bVal = 30,
+        cVal = 12,
+        dVal = 3;
+      let result = ((aVal + bVal) * cVal) / dVal;
+      console.log(`Result: ${result}`);
+
+      // Task 16: Marks Calculation
+      let tamil = 85,
+        english = 90,
+        maths = 95,
+        science = 88,
+        social = 92;
+      // let total = tamil + english + maths + science + social;
+      // let avg = total / 5;
+      let Marks = [tamil, english, maths, science, social];
+      let total= Marks.reduce((a, b) => a + b,0);
+      let avg = total / total.length;
+      console.log(`Total Marks: ${total}, Average: ${avg}`);
+    </script>
+  </head>
+  <body></body>
+</html>
