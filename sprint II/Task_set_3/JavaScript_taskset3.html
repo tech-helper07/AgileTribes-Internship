@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Taskset 3</title>
+  <script>
+    // Task 1: sayHello function
+function sayHello(name = "World") {
+    // console.log(`Hello, ${name}!`);
+    return `Hello, ${name}!`;
+}
+
+// Task 2: add function
+function add(a, b) {
+    return a + b;
+}
+
+// Task 3: multiply function expression
+const multiply = function(x, y) {
+    return x * y ;
+};
+
+// Task 4: multiply function declaration
+function multiplys(a, b, c) {
+    return a * b * c;
+}
+
+
+// Task 5: divide function
+function divide(a, b) {
+    return a / b;
+}
+
+// Task 6: factorial function (recursive)
+function factorial(n) {
+    if (n === 0 || n === 1) return 1;
+    return n * factorial(n - 1);
+}
+
+// Task 7: square function
+function square(num) {
+    return num * num;
+}
+
+// Example calls
+console.log("--- Task 1 ---");
+console.log(`Say Hello:`, sayHello());          // Hello, World!
+console.log(`Say Hello with name: `,sayHello("Alice"));  // Hello, Alice!
+
+console.log("\n--- Task 2 ---");
+console.log(` Function named add with arguments of 2 & 3 and returns their sum: `,add(2, 3));   // 5
+console.log(`sum with negative numbers of -1 & 5 and returns their sum:: `,add(-1, 5));  // 4
+
+console.log("\n--- Task 3 ---");
+console.log(`multiply function with different arguments as 3 & 2 and print the result to the console:`, multiply(3,2));  // 6 (uses the last declared multiply function)
+console.log("\n--- Task 4 ---");
+console.log(`multiply function with different arguments as 4, 5 & 10 and print the result:`,multiplys(4, 5, 10));  // 200
+
+console.log("\n--- Task 5 ---");
+console.log("Divide 10 and 2:",divide(10, 2));  // 5
+console.log("Divide 5 and 0:",divide(5, 0));   // Infinity
+
+console.log("\n--- Task 6 ---");
+console.log("factorial of 5:",factorial(5));   // 120
+console.log("factorial of 0:",factorial(0));   // 1
+
+console.log("\n--- Task 7 ---");
+console.log("Square of 4:",square(4));   // 16
+console.log("Square of -3:",square(-3));  // 9
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
