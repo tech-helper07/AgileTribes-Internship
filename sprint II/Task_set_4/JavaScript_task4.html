@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript task 4</title>
+    <script>
+      // Task 1: Check if a number is positive, negative, or zero
+      function checkNumberSign(num) {
+        if (num > 0) return "Positive";
+        else if (num < 0) return "Negative";
+        else return "Zero";
+      }
+
+      // Task 2: Check if a number is even or odd
+      function checkEvenOdd(num) {
+        return num % 2 === 0 ? "Even" : "Odd";
+      }
+
+      // Task 3: Calculate the power of a number
+      function computePower(base, exponent) {
+        return base ** exponent;
+      }
+
+      // Task 4: Compare two numbers
+      function compareNumbers(a, b) {
+        if (a > b) return `${a} is greater than ${b}`;
+        else if (b > a) return `${b} is greater than ${a}`;
+        else return "Both numbers are equal";
+      }
+
+      // Task 5: Check leap year (returns message)
+      function checkLeapYear(year) {
+        if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+          return `${year} is a leap year`;
+        } else {
+          return `${year} is not a leap year`;
+        }
+      }
+
+      // Task 6: Grade calculator
+      function calculateGrade(score) {
+        if (score >= 90) return "A";
+        else if (score >= 80) return "B";
+        else if (score >= 70) return "C";
+        else if (score >= 60) return "D";
+        else return "F";
+      }
+
+      // Task 7: Age-based message
+      function getAgeMessage(age) {
+        if (age < 16) return "You can't drive.";
+        else if (age <= 17) return "You can drive but not vote.";
+        else if (age <= 24) return "You can vote but not rent a car.";
+        else return "You can do pretty much anything.";
+      }
+
+      // Task 8: FizzBuzz
+      function fizzBuzz() {
+        for (let i = 1; i <= 100; i++) {
+          let output = "";
+          if (i % 3 === 0) output += "Fizz";
+          if (i % 5 === 0) output += "Buzz";
+          console.log(output || i);
+        }
+      }
+
+      // Task 9: Leap year checker with output (duplicate of Task 5)
+      function checkLeapYearTask9(year) {
+        const isLeap = (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+        // if (isLeap) console.log(`${year} is a leap year`);
+        // else console.log(`${year} is not a leap year`);
+        console.log(`${year} is ${isLeap ? "" : "Not"} a leap year`);
+      }
+
+      // Example usage
+      console.log("--- Task 1 ---");
+      console.log(checkNumberSign(5)); // Positive
+      console.log(checkNumberSign(-3)); // Negative
+      console.log(checkNumberSign(0)); // Zero
+
+      console.log("\n--- Task 2 ---");
+      console.log(checkEvenOdd(4)); // Even
+      console.log(checkEvenOdd(7)); // Odd
+
+      console.log("\n--- Task 3 ---");
+      console.log(computePower(5, 2)); // 25
+      console.log(computePower(2, 3)); // 8
+
+      console.log("\n--- Task 4 ---");
+      console.log(compareNumbers(5, 3)); // 5 is greater than 3
+      console.log(compareNumbers(2, 4)); // 4 is greater than 2
+      console.log(compareNumbers(7, 7)); // Both numbers are equal
+
+      console.log("\n--- Task 5 ---");
+      console.log(checkLeapYear(2020)); // 2020 is a leap year
+      console.log(checkLeapYear(2021)); // 2021 is not a leap year
+
+      console.log("\n--- Task 6 ---");
+      console.log(calculateGrade(95)); // A
+      console.log(calculateGrade(85)); // B
+      console.log(calculateGrade(75)); // C
+      console.log(calculateGrade(65)); // D
+      console.log(calculateGrade(50)); // F
+
+      console.log("\n--- Task 7 ---");
+      console.log(getAgeMessage(14)); // You can't drive.
+      console.log(getAgeMessage(17)); // You can drive but not vote.
+      console.log(getAgeMessage(20)); // You can vote but not rent a car.
+      console.log(getAgeMessage(25)); // You can do pretty much anything.
+
+      console.log("\n--- Task 8 ---");
+      fizzBuzz(); // Prints FizzBuzz sequence to console
+
+      console.log("\n--- Task 9 ---");
+      checkLeapYearTask9(2024); // 2024 is a leap year
+      checkLeapYearTask9(1999); // 1999 is not a leap year
+      // for(let i=0;i<=2050;i++){
+      //   checkLeapYearTask9(i); // Check all years from 0 to 3000
+      // }
+    </script>
+  </head>
+  <body></body>
+</html>
