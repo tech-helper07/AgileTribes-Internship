@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Taskset 5</title>
+    <script>
+      // Task 1: Print numbers from 1 to 10
+      function print1To10() {
+        for (let i = 1; i <= 10; ++i) 
+        console.log(i);
+      }
+
+      // Task 2: Print even numbers from 1 to 20
+      function printEven1To20() {
+        for (let i = 2; i <= 20; i += 2) console.log(i);
+      }
+
+      // Task 3: Print odd numbers from 1 to 20
+      function printOdd1To20() {
+        for (let i = 1; i <= 20; i += 2) console.log(i);
+      }
+
+      // Task 4: Calculate factorial
+      function factorial(n) {
+        let result = 1;
+        for (let i = 2; i <= n; i++) result *= i;
+        return result;
+      }
+
+      // Task 5: Sum of 1-100
+      function sum1To100() {
+        let sum = 0;
+        for (let i = 1; i <= 100; i++) sum += i;
+        return sum;
+      }
+
+      // Task 6: Average of array
+      function arrayAverage(arr) {
+        let sum = 0;
+        for (const num of arr) sum += num;
+        return sum / arr.length;
+      }
+
+      // Task 7: Draw triangle pattern
+      function drawTriangle(n) {
+        for (let row = 1; row <= n; row++) {
+          let line = "";
+          for (let col = 1; col <= row; col++) line += "* ";
+          console.log(line);
+        }
+      }
+
+      function drawsquare(n){
+        let lines = "";
+        for (let row = 1; row <= n; row++){
+          //console.log("* * * * * ");
+          for (let col=1; col <= n; col++) lines+= "* ";
+          lines += "\n";
+        }
+        console.log(lines);
+      }
+
+      function drawdiamond(n){
+
+      }
+
+      // Task 8: Print 1-5
+      function print1To5() {
+        for (let i = 1; i <= 5; i++) console.log(i);
+      }
+
+      // Task 9: First 10 natural numbers
+      function printFirst10Natural() {
+        for (let i = 1; i <= 10; i++) console.log(i);
+      }
+
+      // Task 10: Check first and last element
+      function checkFirstLast(arr) {
+        return arr[0] === arr[arr.length - 1];
+      }
+
+      // Task 11: Print divisible by 5
+      function printDivisibleBy5(arr) {
+        arr.forEach((num) => num % 5 === 0 && console.log(num));
+      }
+
+      // Task 12: Vowel check
+      function isVowel(char) {
+        return "aeiou".includes(char.toLowerCase());
+      }
+
+      // Task 13: Count even/odd in range
+      function countEvenOdd(start, end) {
+        let even = 0,odd = 0;
+        for (let i = start; i <= end; i++) i % 2 === 0 ? even++ : odd++;
+        return {even, odd};
+      }
+
+      // Task 14: Print 1-25 exclude multiples of 5
+      function printExclude5Multiples() {
+        for (let i = 1; i <= 25; i++) if (i % 5 !== 0) console.log(i);
+      }
+
+      // Task 15: Factorials of array elements
+      function arrayFactorials(arr) {
+        return arr.map((num) => factorial(num));
+      }
+
+      // Task 16: Product or sum
+      function productOrSum(a, b) {
+        const product = a * b;
+        return product > 500 ? a + b : product;
+      }
+
+      // Task 17: Greatest of two
+      function greatestOfTwo(a, b) {
+        return Math.max(a, b);
+      }
+
+      // Task 18: Greatest of three
+      function greatestOfThree(a, b, c) {
+        return Math.max(a, b, c);
+      }
+
+      // Task 19: Separate positive/negative numbers
+      function separateNumbers(arr) {
+        const positive = [],
+          negative = [];
+        arr.forEach((num) =>
+          num >= 0 ? positive.push(num) : negative.push(num)
+        );
+        return { positive, negative };
+      }
+
+      // Example usage
+      console.log("--- Task 1 ---");
+      print1To10();
+
+      console.log("--- Task 2 ---");
+      printEven1To20(); 
+
+      console.log("--- Task 3 ---");
+      printOdd1To20(); 
+
+      console.log("--- Task 4 ---");
+      console.log(`Factorial of 5 is:`, factorial(5)); 
+
+      console.log("--- Task 5 ---");
+      console.log("Sum of 1 to 100 is:",sum1To100());
+
+      console.log("--- Task 6 ---");
+      console.log(arrayAverage([20,30,40,50,60]));
+
+      console.log("--- Task 7 ---");
+      console.log("Drawing triangle pattern"); drawTriangle(5);
+      console.log("Drawing Square pattern:"); drawsquare(5);
+
+      console.log("--- Task 8 ---");
+      print1To5();
+
+      console.log("--- Task 9 ---");
+      printFirst10Natural();
+
+      console.log("\n--- Task 10 ---");
+      console.log(checkFirstLast([10, 20, 30, 10])); // true
+
+      console.log("--- Task 11 ---");
+      printDivisibleBy5([10, 20, 30, 105, 34, 27, 100]);
+
+      console.log("--- Task 12 ---");
+      console.log(isVowel("aeiou"));
+      
+      console.log("--- Task 13 ---");
+      console.log(`even odd count from 1 to 17:`,countEvenOdd(1, 17)); // { even: 5, odd: 5 }
+      console.log(`even odd count from 27 to 53:`,countEvenOdd(27, 53)); // { even: 10, odd: 10 }
+
+      console.log("--- Task 14 ---");
+      console.log("Print numbers from 1 to 25 excluding multiples of 5:");
+      printExclude5Multiples(); // 1, 2, 3, 4, 6, 7, 8, 9, 11, 12, 13, 14, 16, 17, 18, 19, 21, 22, 23, 24
+
+      console.log("--- Task 15 ---");
+      console.log("factorials of array elements [1, 2, 3, 4, 5] are",arrayFactorials([1, 2, 3, 4, 5])); // [1, 2, 6, 24, 120]
+      console.log("factorials of array elements [0, 1, 2, 3, 4] are",arrayFactorials([0, 1, 2, 3, 4])); // [1, 1, 2, 6, 24]
+
+      console.log("\n--- Task 16 ---");
+      console.log(productOrSum(30, 20)); // 600 → returns 50
+
+      console.log("--- Task 17 ---");
+      console.log("Greatest of 10 and 100:",greatestOfTwo(10, 100)); // 20
+      console.log("Greatest of 10 and -100:",greatestOfTwo(10, -100)); // 30
+
+      console.log("--- Task 18 ---");
+      console.log("Greatest of 10, 20 and 30:",greatestOfThree(10, 20, 30)); // 30
+      console.log("Greatest of 10, -20 and 30:",greatestOfThree(10, -20, 30)); // 30
+
+      console.log("\n--- Task 19 ---");
+      separateNumbers([23, 4, -6, -9, -45]);
+      console.log("separate numbers from 23, 4, -6, -9, -45 are:");
+      console.log(separateNumbers([23, 4, -6, -9, -45])); // { positive: [23, 4], negative: [-6, -9, -45] }
+
+      // { positive: [23, 4], negative: [-6, -9, -45] }
+    </script>
+  </head>
+  <body></body>
+</html>
