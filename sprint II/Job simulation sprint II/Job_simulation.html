@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Job Simulation</title>
+    <script>
+      alert("Welcome to the JavaScript Job Simulation!");
+      alert(`This is a simple calculator platform. 
+      To perforn Addition, Subtraction, Multiplication, division and modulo Operations.
+      Let's gets go`);
+      function getNumber(promptMessage) {
+        let input, number;
+        do {
+          input = prompt(promptMessage);
+          number = parseFloat(input);
+        } while (isNaN(number)); // Repeat until a valid number is entered
+        return number;
+      }
+
+      // Get user inputs
+      const a = getNumber("Enter the first number:");
+      const b = getNumber("Enter the second number:");
+
+      // Validate and get the arithmetic operation
+      let operation;
+      do {
+        operation = prompt("Enter operation (+, -, *, /, %):");
+      } while (!["+", "-", "*", "/", "%"].includes(operation)); // Repeat until a valid operation is entered
+
+      // Perform calculation and display result
+      let result;
+      if (operation === "/" && b === 0) {
+        alert("Error: Division by zero is not allowed.");
+      } else {
+        switch (operation) {
+          case "+":
+            result = a + b;
+            break;
+          case "-":
+            result = a - b;
+            break;
+          case "*":
+            result = a * b;
+            break;
+          case "/":
+            result = a / b;
+            break;
+          case "%":
+            result = a % b;
+            break;
+        }
+        alert(`Result: ${a} ${operation} ${b} = ${result}`);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
