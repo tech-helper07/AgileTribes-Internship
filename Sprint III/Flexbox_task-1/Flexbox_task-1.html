@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox_task - 1</title>
+  <style>
+    h1{
+      text-align: center;
+      font-size: 2rem;
+      color: #333;
+    }
+    .container {
+      display: flex;
+      /* justify-content: space-between;
+      align-items: center; */
+      border: 2px solid #333;
+      width: 50%;
+      min-height: 40vh;
+      /* padding: 10px; */
+      margin: auto;
+      flex-direction: column;
+    }
+    .box1 {
+      width: 100%;
+      height: 100px;
+      background-color: rgb(255, 201, 22);
+      color: white;
+      display: flex;
+      justify-content: center; /* move left to right using justif-content*/
+      align-items: flex-start; /* move top to bottom using align-items*/
+      font-size: 2rem;
+    }
+    .box2 {
+      width: 25%;
+      height: 70vh;
+      background-color: blue;
+      color: white;
+      display: flex;
+      justify-content: center; /* move left to right using justif-content*/
+      /* align-items: ; move top to bottom using align-items */
+      font-size: 2rem;
+    }
+    .box3 {
+      width: 75%;
+      height: 70vh;
+      background-color: #39973c;
+      color: white;
+      display: flex;
+      justify-content: center; /* move left to right using justif-content*/
+      /* align-items: ; move top to bottom using align-items */
+      font-size: 2rem;
+      /* flex-grow: 1;
+      flex-basis: 0; */
+      flex-direction: row;
+    }
+    .container2 {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      max-height: 500px;
+      background-color: #f1f1f1;
+    }
+    .box{
+      background-color: rgb(195, 0, 0);
+      height: 60px;
+    }
+    .layout {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 40%;
+      min-height: 50vh;
+      /* background-color: #f1f1f1; */
+      margin: auto;
+      border: 3px solid black;
+    }
+    .head{
+      background-color: rgb(255, 175, 255);
+      color: black;
+      justify-content: center;
+      align-items: center;
+    }
+    .foot{
+      background-color: rgb(182, 66, 255);
+      color: black;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+    }
+    .naver{
+      background-color: rgb(126, 50, 198);
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+    }
+    .content{
+      font-size: 2rem;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+    }
+    .panel{
+      background-color: rgb(219, 27, 210);
+      justify-content: center;
+      align-items: center;
+      color: black;
+      height: 200px;
+      width: 17%;
+      padding: 10px;
+    }
+    .containers{
+        display: grid;grid-template-columns:repeat(3, 1fr);
+        grid-template-rows: 50px 50px 100px 100px 50px;
+        grid-template-areas:
+        "l l l"
+        "N N N"
+        "F F F"
+        "c1 c2 c3"
+        "co co co";
+        gap: 10px;
+        padding: 10px;
+        min-height: 400px;
+        width: 70%;
+        margin: auto;
+      }
+      .L{
+        grid-area: l;
+        /* border: 2px solid black; */
+        background-color: rgb(231, 222, 239);
+        text-align: center;
+        place-content: center;
+        font-weight: bold;
+        font-size: 40px;
+        border-radius: 5px;
+      }
+      .N{
+        grid-area: N;
+        /* border: 2px solid black; */
+        background-color: rgb(231, 222, 239);
+        color: black;
+        text-align: center;
+        place-content: center;
+        word-spacing: 20px;
+        border-radius: 5px;
+      }
+      .F{
+        grid-area: F;
+        /* border: 2px solid black; */
+        background-color: rgb(231, 222, 239);
+        color: black;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+      .c1{
+        grid-area: c1;
+        background-color: rgb(231, 222, 239);
+        color: black;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+      .c2{
+        grid-area: c2;
+        background-color: rgb(231, 222, 239);
+        color: black;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+      .c3{
+        grid-area: c3;
+        background-color: rgb(231, 222, 239);
+        color: black;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+      .co{
+        grid-area: co;
+        background-color: rgb(231, 222, 239);
+        color: black;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+
+  </style>
+</head>
+<body>
+  <main>
+    <h1>CSS FLEXBOX CHALLENGE - 1</h1>
+  <div class="container">
+    <header class="box1">Header</header>
+    <div class="container2">
+      <nav class="box2">Nav</nav>
+      <aside class="box3">Article</aside>
+    </div>
+    <div class="box1 box">Footer</div>
+  </main>
+  
+  <main>
+    <h1>CSS FLEXBOX CHALLENGE - 2</h1>
+    <div class="layout">
+      <header class="box1 head">Header</header>
+      <nav class="box1 naver">Navigation Bar</nav>
+      <main class="content">Main Content</main>
+      <footer class="box1 foot">Footer</footer>
+    </div>
+  </main>
+
+  <main>
+    <h1>CSS FLEXBOX CHALLENGE - 3</h1>
+    <div class="layout">
+      <header class="box1 head">Header</header>
+      <nav class="box1 naver">Navigation Bar</nav>
+      <div class="container2">
+        <nav class="box2 panel">Left panel</nav>
+        <main class="content">Main Content</main>
+      </div>
+      <footer class="box1 foot">Footer</footer>
+    </div>
+  </main>
+
+  <main>
+    <h1>CSS FLEXBOX CHALLENGE - 4</h1>
+    <div style="width: 60%;margin: auto;padding: 10px;margin-bottom: 50px;min-height: 500px;">
+      <h3 style="background-color: rgb(10, 100, 100);color: white;width: 90;">Original Wireframe</h3>
+    <p style="text-align: center;">< -- 600px -- ></p>
+    <main style="display: grid;background-color: rgb(177, 241, 220);width: 100%;margin: auto;gap: 15px;position: static;font-weight: bold;">
+      <header style="background-color: cadetblue;padding: 20px;text-align: center;font-weight: bold;grid-column: 1/span 3;">Header</header>
+      <div style="display: grid;grid-template-columns: 2fr 1fr;width: 50vw;position: static;gap: 15px;">
+        <div style="height: 60%;background-color: cadetblue;text-align: center;grid-column: 1/ span 1;width: 120%;padding: 20px;margin-left: 15px;padding-bottom: 30px;margin-bottom: 10px;">
+          Intro Copy
+        </div>
+        <div style="background-color: cadetblue;text-align: center;grid-column: 3/ span 8;height: 50px;width: 130px;margin-bottom: 10x;"> 
+          Hero Image
+        </div>
+        <div style="background-color: rgb(187, 206, 40);text-align: center;grid-column: 3/ span 8;height: 20px;width: 130px;margin-top: -20px;">
+          Call to Action
+        </div>
+        <div style="background-color: cadetblue;text-align: center;font-weight: bold;grid-column: 1/ span 10;padding: 10px;margin-left: 15px;">Features</div>
+        <div style="background-color: cadetblue;text-align: center;grid-column: 1/ span 1;width: 120%;padding: 20px;margin-left: 15px;">
+          More copy
+        </div>
+        <div style="background-color: cadetblue;text-align: center;grid-column: 3/ span 8;width: 130px;padding: 10px;">Call to Action</div>
+      </div>
+      <footer style="background-color: cadetblue;padding: 20px;text-align: center;font-weight: bold;grid-column: 1/span 3">Footer</footer>
+    </main>
+    </div>
+  </main>
+
+
+  <main>
+    <h1>CSS FLEXBOX CHALLENGE - 5</h1>
+    <main class="containers">
+      <header class="L">Logo</header>
+      <nav class="N"><a href="#">HOME</a> <a href="#">PRODUCTS</a> <a href="#">SERVICES</a> <a href="#">ABOUT</a> <a href="#">CONTACT</a></nav>
+      <article class="F">Features</article>
+      <!-- <div class="containerss">
+      </div> -->
+      <caption>
+        <div class="c1">Column One</div>
+        <div class="c2">Column Two</div>
+        <div class="c3">Column Three</div>
+      </caption>
+      <footer class="co">&copy; Copyright 2011 </footer>
+    </main>
+  </main>
+</body>
+</html>
