@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Task 2</title>
+    <style>
+      body {
+        margin: 0;
+        font-size: 3.5vb;
+      }
+      h1 {
+        text-align: center;
+        font-size: 2rem;
+        color: #333;
+      }
+      .layout {
+        width: 30%;
+        margin: auto;
+        /* background-color: rgb(5, 6, 6); */
+        display: flex;
+        flex-direction: column;
+        min-height: 100px;
+        /* border: 2px solid black; */
+        padding: 2px;
+        gap: 5px;
+      }
+      .box1 {
+        background-color: rgb(23, 185, 214);
+        color: white;
+        flex: 1;
+        text-align: center;
+        padding: 10px;
+        /* height: 70px; */
+      }
+      .box2 {
+        background-color: rgb(208, 170, 255);
+        color: white;
+        /* flex: 1; */
+        align-self: flex-start;
+        height: 120px;
+        width: 40%;
+        text-align: center;
+        padding: 5px;
+        order: 1;
+      }
+      .box4 {
+        background-color: rgb(243, 181, 24);
+        color: white;
+        width: 53.6%;
+        height: 190px;
+        text-align: center;
+        padding: 5px;
+        /* justify-content: flex-end; */
+        order: 2;
+      }
+      .box3 {
+        background-color: rgb(17, 176, 33);
+        color: white;
+        /* flex: 1; */
+        width: 41%;
+        height: 150px;
+        justify-content: flex-start;
+        text-align: center;
+        padding: 5px;
+        order: 3;
+        margin-top: -70px;
+      }
+
+      .box5 {
+        background-color: rgb(121, 118, 118);
+        color: white;
+        flex: 1;
+        text-align: center;
+        padding: 5px;
+        order: 4;
+        /* margin-top: -30px; */
+      }
+      .box6 {
+        background-color: rgb(75, 198, 120);
+        color: white;
+        flex: 3;
+        text-align: center;
+        padding: 5px;
+      }
+      .box7 {
+        background-color: rgb(247, 171, 255);
+        color: white;
+        flex: 1;
+        text-align: center;
+        padding: 5px;
+      }
+      .box1 {
+        background-color: rgb(23, 185, 214);
+        color: white;
+        flex: 1;
+        text-align: center;
+        padding: 5px;
+      }
+      .foot {
+        background-color: rgb(255, 136, 0);
+      }
+      .innerbox {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        min-height: 40vh;
+        flex-wrap: wrap;
+        border: none;
+        padding: 5px;
+        margin: -5px;
+      }
+      .innerbox2 {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        min-height: 10vh;
+        flex-wrap: wrap;
+        border: none;
+        padding: 5px;
+        margin: -5px;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        /* gap: 10px; */
+        min-height: 10vh;
+        border: 2px solid rgb(165, 198, 128);
+        /* padding: 5px; */
+        width: 50%;
+        margin: auto;
+        border-collapse: collapse;
+      }
+      .InnerContainer {
+        display: flex;
+        flex-direction: row;
+      }
+      .b1 {
+        background-color: rgb(161, 82, 82);
+        /* color: rgb(140, 62, 62); */
+        flex: 1;
+        border: 2px solid rgb(165, 198, 128);
+        border-collapse: collapse;
+        padding: 30px;
+      }
+      .b2 {
+        display: flex;
+        background-color: rgb(99, 99, 99);
+        width: 100%;
+        height: 40vh;
+        justify-content: center;
+        border: 2px solid rgb(165, 198, 128);
+        border-collapse: collapse;
+        align-items: center;
+      }
+      .b3 {
+        background-color: rgba(255, 255, 39, 0.92);
+        /* justify-content: flex-start;  */
+        /* align-items: flex-end;  */
+        /* margin: auto; */
+        width: 50px;
+        height: 50px;
+      }
+      .b4 {
+        background-color: darkolivegreen;
+        border: 2px solid rgb(165, 198, 128);
+        border-collapse: collapse;
+        flex: 1;
+        /* width: 100%; */
+      }
+      .InnerContainer2 {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        /* border: 2px solid black; */
+      }
+      .InnerContainer3{
+        display: flex;
+        flex-direction: row;
+        /* border: 2px solid black; */
+      }
+      .space-between {
+        justify-content: space-between;
+      }
+      .space-around {
+        justify-content: space-around;
+      }
+      .space-evenly {
+        justify-content: space-evenly;
+      }
+      .align-start {
+        align-items: flex-start;
+      }
+      .align-end {
+        align-items: flex-end;
+      }
+      .task3-container {
+        display: flex;
+        height: 80px;
+        margin-top: 20px;
+        border: 2px solid #666;
+        padding: 10px;
+        justify-content: space-around;
+        flex-direction: row;
+        /* justify-content: right; */
+        /* flex-wrap: wrap; */
+        /* gap: 20px; */
+        width: 50%;
+        margin: auto;
+      }
+      .task3-box {
+        width: 120px;
+        height: 60px; 
+        /* padding: 5px; */
+        /* flex: 1; */
+        background: #2dfc6bd1;
+        border: 1px solid black;
+        display: flex;
+     
+        align-items: center;
+        justify-content: center;
+      }
+      .gap{
+        gap: 20px;
+      }
+      .Boxx2{
+        justify-self: flex-end;
+        align-self: center;
+        /* margin-left: -30px; */
+        /* float: right; */
+      }
+      .box_end{
+        justify-self: flex-end;
+      }
+      .task3-containers {
+        display: flex;
+        height: 150px;
+        margin-top: 20px;
+        border: 2px solid #666;
+        padding: 10px;
+        justify-content: space-between;
+        /* flex-direction: row; */
+        /* justify-content: right; */
+        /* flex-wrap: wrap; */
+        gap: 30px;
+        width: 50%;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS FLEXBOX CHALLENGE - 1</h1>
+    <main class="layout">
+      <header class="box1">Header</header>
+      <main class="innerbox">
+        <article class="box2">Hero</article>
+        <nav class="box3">Sidebar</nav>
+        <aside class="box4">
+          Main Content
+          <p style="font-size: 2vb">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s
+          </p>
+        </aside>
+        <aside class="box5">Extra Content</aside>
+      </main>
+      <main class="innerbox2">
+        <article class="box6">Related Images</article>
+        <article class="box7">Related posts</article>
+      </main>
+      <footer class="box1 foot">Footer</footer>
+    </main>
+
+    <h1>CSS FLEXBOX CHALLENGE - 2</h1>
+    <main class="container">
+      <main class="InnerContainer">
+        <div class="b1"></div>
+        <div class="b1"></div>
+        <div class="b1"></div>
+      </main>
+      <main class="InnerContainer3">
+        <main class="InnerContainer2">
+          <div class="b2">
+            <box class="b3"></box>
+          </div>
+        </main>
+        <main class="InnerContainer2">
+          <div class="b4"></div>
+            <div class="b4"></div>
+            <div class="b4"></div>
+            <div class="b4"></div>
+        </main>
+      </main>
+    </main>
+
+    <h1>CSS FLEXBOX CHALLENGE - 3</h1>
+    <div class="task3-container" >
+      <div class="task3-box" style="flex: 1;"></div>
+      <div class="task3-box" style="flex: 1;"></div>
+      <div class="task3-box" style="flex: 1;"></div>
+      <div class="task3-box" style="flex: 1;"></div>
+    </div>
+    <br>
+    <div class="task3-container ">
+      <div class="task3-box"></div>
+      <div class="task3-box"></div>
+      <div class="task3-box"></div>
+      <div class="task3-box"></div>
+    </div>
+    <br>
+    <div class="task3-container">
+      <div class="task3-box"></div>
+      <div class="task3-box" style="margin-left: -102px;"></div>
+      <div class="task3-box"></div>
+      <div class="task3-box"></div>
+    </div>
+    <br>
+    <div class="task3-container">
+      <div class="task3-box"></div>
+      <div class="task3-box" style="margin-right: -102px;"></div>
+      <div class="task3-box"></div>
+      <div class="task3-box"></div>
+    </div>
+    <br>
+    <div class="task3-container">
+      <div class="task3-box" style="margin-left: -75px;"></div>
+      <div class="task3-box" style="margin-left: -127px;"></div>
+      <div class="task3-box"></div>
+      <div class="task3-box"></div>
+    </div>
+    <div style="margin-bottom: 100px;"></div>
+  </body>
+</html>
