@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bloom Web Design</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Navbar Styles */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        padding: 1px;
+        padding-left: 60px;
+        background: rgb(33, 32, 32);
+        color: white;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+        margin-right: 150px;
+        font-size: 20px;
+        font-weight: bold;
+        /* margin: auto; */
+        align-items: center;
+        justify-content: center;
+      }
+      .logo {
+        height: 150px;
+        width: 15%;
+      }
+
+      /* Hero Section */
+      .hero {
+        display: flex;
+        gap: 10px;
+        padding: 20px 40px;
+        background: #dfdfdf;
+        margin-bottom: 80px;
+      }
+
+      .hero-text {
+        flex: 1;
+      }
+
+      .hero-image {
+        flex: 1;
+        background: #ddd;
+        height: 300px;
+      }
+
+      /* Cards Section */
+      .cards-container {
+        display: flex;
+        gap: 30px;
+        padding: 50px;
+        background: #fffdfd;
+      }
+
+      .card {
+        flex: 1;
+        padding: 20px;
+        background: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Footer */
+      footer {
+        display: flex;
+        gap: 30px;
+        padding: 50px;
+        background: #333;
+        /* text-align: center; */
+        color: white;
+        justify-content: center;
+        align-items: center;
+        /* margin-left: 100px; */
+      }
+
+      .footer-column {
+        flex: 1;
+      }
+
+      /* Utility Styles */
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        margin-top: 15px;
+        border-radius: 10px;
+      }
+      .Layout {
+        width: 80%;
+        margin: auto;
+        padding: -20px;
+        margin-top: -40px;
+      }
+      .card_image {
+        width: 100%;
+        height: 200px;
+        background-color: black;
+      }
+      .footer-image {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        border-radius: 50%;
+        /* position: initial; */
+      }
+      .post-image{
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+        border-radius: 20%;
+      }
+      .social-links {
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+        gap: 5px;
+        margin-left: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <!-- <div class="logo">Bloom</div> -->
+      <img
+        src="https://i.pinimg.com/736x/13/5a/b9/135ab9e07724880feb18489a2f071e35.jpg"
+        alt="Company Logo"
+        class="logo"
+      />
+      <ul class="nav-links">
+        <li>Home</li>
+        <li>About Us</li>
+        <li>Services</li>
+        <li>Portfolio</li>
+        <li>Contact Us</li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Lorem ipsum dolor sit amet</h1>
+        <p style="margin: auto">
+          Vestibulum pulvinar tincidunt placerat. Nulla porta porttitor ante...
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum
+          dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit
+          amet, consectetur adipiscing elit
+          <br /><br />
+          Vestibulum pulvinar tincidunt placerat. Nulla porta porttitor ante...
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum
+          dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit
+          amet, consectetur adipiscing elit
+        </p>
+        <a href="#" class="button">Learn More</a>
+      </div>
+      <!-- <div class="hero-image"></div> -->
+      <img
+        src="https://st.depositphotos.com/1720162/1817/i/450/depositphotos_18177429-stock-photo-web-design-concept.jpg"
+        alt="image"
+        class="hero-image"
+      />
+    </section>
+
+    <!-- Cards Section -->
+    <div class="Layout">
+      <h1>This is a Heading</h1>
+      <section class="cards-container">
+        <div class="card">
+          <img
+            src="https://st.depositphotos.com/1720162/1817/i/450/depositphotos_18177429-stock-photo-web-design-concept.jpg"
+            alt="image1"
+            class="card_image"
+          />
+          <h3>Aliquam et laculis sapien</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <a href="#" class="button">Learn More</a>
+        </div>
+        <div class="card">
+          <img
+            src="https://st.depositphotos.com/1720162/1817/i/450/depositphotos_18177429-stock-photo-web-design-concept.jpg"
+            alt="image1"
+            class="card_image"
+          />
+          <h3>Aliquam et laculis sapien</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <a href="#" class="button">Learn More</a>
+        </div>
+        <div class="card">
+          <img
+            src="https://st.depositphotos.com/1720162/1817/i/450/depositphotos_18177429-stock-photo-web-design-concept.jpg"
+            alt="image1"
+            class="card_image"
+          />
+          <h3>Aliquam et laculis sapien</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <a href="#" class="button">Learn More</a>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-column">
+        <h2 style="padding: 20px">Latest Posts</h2>
+        <!-- <div class="post">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSysUR6YxXIxDwDbDyW03YSqKgO93rB-ah9-A&s" alt="date-image" class="footer-image">
+          <p>BUY 27 Aliquam et laculis sapien</p>
+          <p>Vestibulum pulvinar tincidunt placerat.</p> -->
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              margin-left: 20px;
+              margin-bottom: 10px;
+              /* justify-content: center;
+              align-items: center; */
+            "
+          >
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSysUR6YxXIxDwDbDyW03YSqKgO93rB-ah9-A&s"
+              alt="img"
+              class="post-image"
+            />
+           <div>
+            <h6 style="margin-top: 7px;position: relative;font-size: 15px;">Aliquam et laculis sapien</h6>
+            
+            <p style="font-size: 13px;margin-top: 2px;">Vestibulum pulvinar tincidunt placerat</p>
+           </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              margin-left: 20px;
+              margin-bottom: 10px;
+              /* justify-content: center;
+              align-items: center; */
+            "
+          >
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSysUR6YxXIxDwDbDyW03YSqKgO93rB-ah9-A&s"
+              alt="img"
+              class="post-image"
+            />
+           <div>
+            <h6 style="margin-top: 7px;position: relative;font-size: 15px;">Aliquam et laculis sapien</h6>
+            
+            <p style="font-size: 13px;margin-top: 2px;">Vestibulum pulvinar tincidunt placerat</p>
+           </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              margin-left: 20px;
+              margin-bottom: 10px;
+              /* justify-content: center;
+              align-items: center; */
+            "
+          >
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSysUR6YxXIxDwDbDyW03YSqKgO93rB-ah9-A&s"
+              alt="img"
+              class="post-image"
+            />
+           <div>
+            <h6 style="margin-top: 7px;position: relative;font-size: 15px;">Aliquam et laculis sapien</h6>
+            
+            <p style="font-size: 13px;margin-top: 2px;">Vestibulum pulvinar tincidunt placerat</p>
+           </div>
+          </div>
+          
+        </div>
+        <!-- Repeat similar post blocks -->
+      </div>
+
+      <div class="footer-column">
+        <h2 style="padding: 20px">About</h2>
+        <p style="min-height: 170px;">
+          Vestibulum pulvinar tincidunt placerat... Vestibulum pulvinar
+          tincidunt placerat. Nulla porta porttitor ante... Lorem ipsum dolor
+          sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit
+        </p>
+        <!-- <p class="copyright">
+          Copyright © 2013. All rights reserved Bloom Web Design
+        </p> -->
+      </div>
+
+      <div class="footer-column">
+        
+        <div class="social-links">
+          <h2>Stay Connected</h2> <br>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              /* justify-content: center;
+              align-items: center; */
+            "
+          >
+            <img
+              src="https://i.pinimg.com/736x/fb/a3/5c/fba35c5fc1f91ebf940855abf745b86c.jpg"
+              alt="img"
+              class="footer-image"
+            />
+            <p style="margin-top: 7px;position: relative;">Facebook</p>
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              /* justify-content: center;
+              align-items: center; */
+            "
+          >
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShoK74IYKvRG-EJdIJCClFwDJC8kWdDA5l4mYYUWgEoTcZ-_wNBarBbER1Cz5RkQWxZMg&usqp=CAU"
+              alt="img"
+              class="footer-image"
+            />
+            <p style="margin-top: 7px;position: ab;">Twitter</p>
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              /* justify-content: center;
+              align-items: center; */
+            "
+          >
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZXVP0zkIb2xgbJzwnnYYVt5T3xN7c9bDtYA&s"
+              alt="img"
+              class="footer-image"
+            />
+            <p style="margin-top: 7px">RSS</p>
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              /* justify-content: center;
+              align-items: center; */
+            "
+          >
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsqF2iXimUm5qZvlwNP8C4Bvdlb4TG4Tw8ITm8D7PBgJ8HvBdBJUOYQ-0ykref4EKM9bo&usqp=CAU"
+              alt="img"
+              class="footer-image"
+            />
+            <p style="margin-top: 7px">Google+</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <p style="text-align: center; padding: 20px">
+      Copyright (c) 2013. All rights reserved Bloom Web Design
+    </p>
+  </body>
+</html>
