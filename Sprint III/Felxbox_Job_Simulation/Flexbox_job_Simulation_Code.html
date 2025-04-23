@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destination Wedding Invitation</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        /* box-sizing: border-box; */
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh;
+        background: url("https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")
+          no-repeat center center fixed;
+        /* background-size: cover; */
+        font-family: "Montserrat", sans-serif;
+        padding: 20px;
+        flex-wrap: wrap;
+        /* transform: scale(1.5); */
+        /* overflow: hidden; */
+        /* width: 100%; */
+        /* border: 2px solid rgb(5, 5, 5); */
+      }
+
+      .wedding-card {
+        width: 80%;
+        /* max-height: 9000px; */
+        height: 50vh;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        backdrop-filter: blur(5px);
+        /* border: 5px solid rgba(60, 255, 0, 0.3); */
+      }
+      .header-img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .card-header {
+        display: flex;
+        background: linear-gradient(135deg, #ff6b6b, #ff8e8e, #f3c4fb, #c4e0f9);
+        background-size: 300% 300%;
+        animation: gradient 5s ease infinite;
+        padding: 30px;
+        text-align: center;
+        color: white;
+        /* position: relative; */
+        overflow: hidden;
+        /* flex: 1; */
+        flex-direction: column;
+        width: 12vw;
+        /* border: 5px solid black; */
+        margin-right: 40px;
+        /* transform: rotate(270deg); */
+      }
+
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .passport-stamp {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 80px;
+        height: 80px;
+        background: #d4af37;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: bold;
+        transform: rotate(15deg);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        font-family: "Playfair Display", serif;
+      }
+
+      .couple-names {
+        margin-bottom: 10px;
+      }
+
+      .couple-names h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.8rem;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .card-subtitle {
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+        margin-bottom: 15px;
+      }
+
+      .card-content {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 30px;
+      }
+
+      .details-section {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        /* width: 900px; */
+        padding: 25px;
+        margin-top: -20px;
+        /* border: 2px solid black; */
+        justify-content: space-evenly;
+      }
+
+      .map-section {
+        flex: 1;
+        min-width: 300px;
+        height: 300px;
+        background: url("https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80")
+          center/cover;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .map-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .detail-item {
+        margin-bottom: 20px;
+      }
+
+      .detail-title {
+        font-size: 1rem;
+        color: #ff6b6b;
+        margin-bottom: 5px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .detail-content {
+        font-size: 1.1rem;
+        color: #333;
+        font-weight: 400;
+      }
+
+      .couple-photo {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        margin-right: 20px;
+      }
+
+      .couple-info {
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+      }
+
+      .couple-quote {
+        flex: 1;
+        font-style: italic;
+        color: #666;
+      }
+
+      .rsvp-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            text-align: center;
+            width: 60%;
+            margin-top: 40px; 
+            border-radius: 30px;
+            position: relative;
+            /* border: none;
+            outline: none; */
+            /* z-index: 0; */
+            font-weight: bold;
+            margin: 10 auto;
+        }
+
+        .rsvp-section::after{
+          content: "";
+          z-index: -1;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(135deg, #ff6b6b, #ff8e8e, #f3c4fb, #c4e0f9);
+          background-size: 300% 300%;
+          animation: gradient 5s ease infinite;
+          left: 50%;
+          top: 50%;
+          translate: -50% -50%;
+          padding: 35px;
+          border-radius: 10px;
+          filter: blur(8px);
+          /* animation: glowing 20s linear infinite; */
+          transition: opacity .3s ease-in-out;
+          border-radius: 30px;
+          opacity: 1;
+        }
+        /* .rsvp-section::after{
+          content: "";
+          z-index: -1;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: #000000;
+          left: 0;
+          top: 0;
+          border-radius: 30px;
+        } */
+        /* .rsvp-section::after, .rsvp-section::before{
+          content: "";
+          background: linear-gradient(
+            45deg,
+            #FF0000, #FF7300, #FFFB00, #48FF00,
+            #00FFD5, #002BFF, #FF00CB, #FF0000, 
+          );
+          position: absolute;
+          top: -2px;
+          left: -2px;
+          background-size: 600%;
+          z-index: -1;
+          width: calc(100% + 14px);
+          height: calc(100% + 14px);
+          filter: blur(8px);
+          animation: glowing 20s linear infinite;
+          transition: opacity .3s ease-in-out;
+          border-radius: 30px;
+          opacity: 1;
+        }
+
+        @keyframes glowing {
+            0% {
+                background-position: 0 0;
+            }
+            50% {
+                background-position: 400% 0;
+            }
+            100% {
+                background-position: 0 0;
+            }
+          
+        }
+        .rsvp-section:hover::before {
+            opacity: 1;
+        }
+    
+        .rsvp-section:active:after{
+          background: transparent;
+        }
+
+        .rsvp-section:active{
+          color: #000;
+          font-weight: bold;
+        } */
+        
+        
+        .rsvp-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .rsvp-form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            flex: 1;
+            min-width: 250px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #666;
+        }
+        
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .rsvp-options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .rsvp-btn {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        .rsvp-btn:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+        
+        .boarding-pass-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .barcode {
+            height: 60px;
+            background: repeating-linear-gradient(90deg, #333, #333 2px, transparent 2px, transparent 4px);
+            flex: 1;
+            max-width: 200px;
+            position: relative;
+        }
+        
+        .barcode::after {
+            content: "www.bianche-rose-wedding.com";
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .flight-icon {
+            font-size: 2rem;
+            color: #ff6b6b;
+            margin: 0 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .couple-names h1 {
+                font-size: 2rem;
+            }
+            
+            .card-subtitle {
+                font-size: 1rem;
+            }
+            
+            .couple-info {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .couple-photo {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
+        }
+      .wedding-img {
+        width: 200px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 40px;
+        background: white;
+        /* border-radius: 900px; */
+      }
+      .footer {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wedding-card">
+      <div class="card-header">
+        <div class="passport-stamp">LOVE</div>
+        <div class="couple-names">
+          <h1>Bianche & Rose</h1>
+        </div>
+        <div class="card-subtitle">INVITE YOU TO THEIR DESTINATION WEDDING</div>
+      </div>
+
+      <div
+        style="
+          width: 900px;
+          display: flex;
+          flex-direction: row;
+          margin-left: -30px;
+          height: 100px;
+          flex-wrap: wrap;
+          padding: 10px;
+          
+        "
+      >
+        <img
+          src="https://i.pinimg.com/736x/66/6e/18/666e18395367825a61fbf601fd599688.jpg"
+          alt=""
+          class="header-img"
+        />
+        <div style="display: flex">
+          <h1
+            style="padding: 10px; height: 50px; width: 100%; font-style: italic"
+          >
+            <span style="color: #ff5252; font-size: 40px; margin-right: 350px"
+              >AirLines</span
+            >
+            <span style="float: right; margin-top: 10px">Boarding Pass</span>
+          </h1>
+        </div>
+        <h2
+          style="
+            text-align: center;
+            color: darkgrey;
+            margin-left: 200px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+          "
+        >
+          INVITE YOU TO CELEBRATE THEIR WEDDING
+        </h2>
+        <div>
+          <p
+            style="
+              font-family: 'Brush Script MT', cursive;
+              font-size: 5rem;
+              color: rgb(255, 25, 171);
+              font-weight: lighter;
+              padding-top: -100px;
+              text-align: center;
+              width: 900px;
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              max-height: 100px;
+            "
+          >
+            <span style="margin-right: 40px">Danielle</span>
+            <span
+              ><img
+                src="https://w7.pngwing.com/pngs/687/246/png-transparent-heart-shape-pink-illustration-wedding-invitation-heart-weeding-love-holidays-text.png"
+                alt=""
+                class="wedding-img"
+            /></span>
+            <span style="margin-left: 50px">Andrew</span>
+          </p>
+        </div>
+
+
+        <div class="details-section">
+            <div class="detail-item">
+              <div class="detail-title">Date</div>
+              <div class="detail-content">Sunday, July 25th, 2023</div>
+            </div>
+  
+            <div class="detail-item">
+              <div class="detail-title">Time</div>
+              <div class="detail-content">11:30 PM</div>
+            </div>
+  
+            <div class="detail-item">
+              <div class="detail-title">Location</div>
+              <div class="detail-content">
+                Private Beach, Bay Resort, Fort Lauderdale, Florida
+              </div>
+            </div>
+  
+            <div class="detail-item">
+              <div class="detail-title">RSVP By</div>
+              <div class="detail-content">June 1st, 2023</div>
+            </div>
+  
+            <div class="detail-item">
+              <div class="detail-title">Dress Code</div>
+              <div class="detail-content">Beach Formal</div>
+            </div>
+
+            <!-- <div class="footer"></div> -->
+          </div>
+
+      <!-- <div class="card-content"> -->
+       
+
+          <!-- <div class="couple-info">
+            <img
+              src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+              alt="Couple"
+              class="couple-photo"
+            />
+            <p class="couple-quote">
+              "Love is not about how many days, months, or years you have been
+              together. It's all about how much you love each other every day."
+            </p>
+          </div> -->
+        </div>
+
+        <!-- <div class="map-section">
+          <div class="map-overlay">
+            <i
+              class="fas fa-plane"
+              style="font-size: 1.5rem; margin-bottom: 10px"
+            ></i>
+            <div>Our love journey around the world</div>
+          </div>
+        </div> -->
+      </div>
+
+      <div class="rsvp-section">
+        <h2 class="rsvp-title">PLEASE CONFIRM YOUR ATTENDANCE</h2>
+        <br><br>
+        <div class="rsvp-form">
+            <div class="form-group">
+                <label for="name"><i class="fas fa-user"></i> Passenger Name</label>
+                <input type="text" id="name" placeholder="Enter your full name">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                <input type="email" id="email" placeholder="Enter your email">
+            </div>
+            
+            <div class="form-group">
+                <label for="guests"><i class="fas fa-users"></i> Number in Party</label>
+                <input type="number" id="guests" placeholder="Including yourself">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="message"><i class="fas fa-comment"></i> Special Requests</label>
+                <textarea id="message" placeholder="Dietary restrictions or other needs"></textarea>
+            </div>
+        </div>
+        
+        <div class="rsvp-options">
+            <div>
+                <input type="radio" id="attending" name="rsvp" checked>
+                <label for="attending">Accept with Joy</label>
+            </div>
+            <div>
+                <input type="radio" id="declines" name="rsvp">
+                <label for="declines">Regretfully Decline</label>
+            </div>
+        </div>
+        
+        <button class="rsvp-btn"><i class="fas fa-paper-plane"></i> SUBMIT RSVP</button>
+        
+        <div class="boarding-pass-footer">
+            <div>
+                <i class="fas fa-suitcase-rolling"></i> Pack your bags!
+            </div>
+            <div class="flight-icon">
+                <i class="fas fa-plane"></i>
+            </div>
+            <div class="barcode"></div>
+        </div>
+    </div>
+    </div>
+  </body>
+</html>
