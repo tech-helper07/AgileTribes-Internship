@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript UI Tasks</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      section {
+        border: 1px solid #ddd;
+        padding: 15px;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      h2 {
+        margin-top: 0;
+        color: #333;
+      }
+      button {
+        padding: 8px 15px;
+        background-color: #36b2d1;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 5px 0;
+      }
+      button:hover {
+        background-color: #debb1f;
+      }
+      input {
+        padding: 8px;
+        margin: 5px 0;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        width: 200px;
+      }
+      .mouse-area {
+        width: 200px;
+        height: 100px;
+        background-color: #e0e0e0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        margin: auto;
+      }
+      .key-area {
+        width: 200px;
+        height: 100px;
+        background-color: #d1e7dd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        margin: auto;
+      }
+      h1,
+      h2 {
+        /* margin: auto; */
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JavaScript UI Tasks</h1>
+
+    <!-- Task 1: Button Click Event -->
+    <section>
+      <h2>Task 1: Button Click Event</h2>
+      <button id="task1Button">Click Me</button>
+      <p id="task1Button_output">
+        Check the console for output when button is clicked.
+      </p>
+    </section>
+
+    <!-- Task 2: Button Click - Sum of Two Variables -->
+    <section>
+      <h2>Task 2: Button Click - Sum of Two Variables</h2>
+      <button id="task2Button">Calculate Sum</button>
+      <p>Check the console for the sum when button is clicked.</p>
+    </section>
+
+    <!-- Task 3: Input Box Value Retrieval (Console Log) -->
+    <section>
+      <h2>Task 3: Input Box Value Retrieval (Console Log)</h2>
+      <input type="text" id="task3Input" placeholder="Type something..." />
+      <button id="task3Button">Log Input Value</button>
+      <p>Check the console for the input value when button is clicked.</p>
+    </section>
+
+    <!-- Task 4: Input Box Value Display (Paragraph Tag) -->
+    <section>
+      <h2>Task 4: Input Box Value Display (Paragraph Tag)</h2>
+      <input type="text" id="task4Input" placeholder="Type something..." />
+      <button id="task4Button">Display Input Value</button>
+      <p id="task4Output">Output will appear here</p>
+    </section>
+
+    <!-- Task 5: Input Box - OnChange Event -->
+    <section>
+      <h2>Task 5: Input Box - OnChange Event</h2>
+      <input
+        type="text"
+        id="task5Input"
+        placeholder="Type and press Enter or click outside..."
+      />
+      <h1 id="task5Output">Output will appear here</h1>
+      <p>
+        Type in the input box and press Enter or click outside to trigger the
+        onchange event.
+      </p>
+    </section>
+
+    <!-- Task 6: Double Click Event -->
+    <section>
+      <h2>Task 6: Double Click Event</h2>
+      <button id="task6Button">Double Click Me</button>
+      <h2 id="task6Output">Output will appear here</h2>
+    </section>
+
+    <!-- Task 7: Mouse Enter and Leave Event -->
+    <section>
+      <h2>Task 7: Mouse Enter and Leave Event</h2>
+      <div id="task7Div" class="mouse-area">Hover over this area</div>
+      <p id="task7Output">Mouse events will be shown here</p>
+    </section>
+
+    <!-- Task 8: Key Press and Key Release Event -->
+    <section>
+      <h2>Task 8: Key Press and Key Release Event</h2>
+      <div id="task8Area" class="key-area" tabindex="0">
+        Click here and press any key
+      </div>
+      <p id="task8Output">Key events will be shown here</p>
+    </section>
+
+    <script src="Actions.js"></script>
+  </body>
+</html>
