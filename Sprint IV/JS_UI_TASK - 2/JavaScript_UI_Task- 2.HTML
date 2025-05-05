@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript UI Tasks</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .task {
+        margin-bottom: 40px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+      }
+      h2 {
+        color: #333;
+      }
+      .option-group {
+        margin: 15px 0;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      .result {
+        margin-top: 15px;
+        padding: 10px;
+        background-color: #f5f5f5;
+        border-radius: 4px;
+      }
+      .highlight {
+        background-color: yellow;
+      }
+      h1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JavaScript UI Tasks</h1>
+
+    <!-- Task 1: Fetch & Display Selected Values -->
+    <div class="task" id="task1">
+      <h2>Fetch & Display Selected Values</h2>
+
+      <div class="option-group">
+        <h3>Select a Fruit:</h3>
+        <input type="radio" id="apple" name="fruit" value="Apple" />
+        <label for="apple">Apple</label><br />
+
+        <input type="radio" id="banana" name="fruit" value="Banana" />
+        <label for="banana">Banana</label><br />
+
+        <input type="radio" id="orange" name="fruit" value="Orange" />
+        <label for="orange">Orange</label>
+      </div>
+
+      <div class="option-group">
+        <h3>Select Your Hobbies:</h3>
+        <input type="checkbox" id="reading" name="hobby" value="Reading" />
+        <label for="reading">Reading</label><br />
+
+        <input type="checkbox" id="gaming" name="hobby" value="Gaming" />
+        <label for="gaming">Gaming</label><br />
+
+        <input type="checkbox" id="cooking" name="hobby" value="Cooking" />
+        <label for="cooking">Cooking</label><br />
+
+        <input type="checkbox" id="sports" name="hobby" value="Sports" />
+        <label for="sports">Sports</label>
+      </div>
+
+      <button id="fetchButton">Fetch Selected Values</button>
+
+      <div class="result">
+        <p id="selectionResult">Selected values will appear here...</p>
+      </div>
+    </div>
+
+    <!-- Task 2: Exploring DOM Selection Methods -->
+    <div class="task" id="task2">
+      <h2>Exploring DOM Selection Methods</h2>
+
+      <div id="targetById">
+        This element will be modified using getElementById()
+      </div>
+
+      <div class="queryItem">
+        This is the first element with class "queryItem"
+      </div>
+      <div class="queryItem">
+        This is the second element with class "queryItem"
+      </div>
+      <div class="queryItem">
+        This is the third element with class "queryItem"
+      </div>
+
+      <button id="demonstrateButton">Demonstrate Selection Methods</button>
+
+      <div class="result">
+        <p id="results">Selected class will appear here... and Check the console to see the results! <br></p>
+      </div>
+    </div>
+
+  </body>
+
+  <script src="script.js"></script>
+
+</html>
