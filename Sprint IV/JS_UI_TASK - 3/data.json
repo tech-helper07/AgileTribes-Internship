@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "name": "John Smith",
+      "age": 28,
+      "city": "New York"
+    },
+    {
+      "name": "Emily Davis",
+      "age": 32,
+      "city": "Los Angeles"
+    },
+    {
+      "name": "Michael Brown",
+      "age": 25,
+      "city": "Chicago"
+    }
+  ]
+}
