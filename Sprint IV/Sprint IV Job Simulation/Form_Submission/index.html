@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission & Data Persistence</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            font-weight: bold;
+            font-size: 3rem;
+        }
+        form {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 75%;
+            margin: auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: rgb(0, 123, 255);
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            margin: auto;
+            /* float: right; */
+            text-align: center;
+        }
+        button:hover {
+            background-color: rgb(7, 95, 188);
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Information Form</h1>
+    
+    <form id="userForm">
+        <div class="form-group">
+            <label for="fullName">Full Name *</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+            <div id="fullNameError" class="error">Please enter your full name</div>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address">
+            <div id="emailError" class="error">Please enter a valid email address</div>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10,15}">
+            <div id="phoneError" class="error">Please enter a valid phone number</div>
+        </div>
+        
+        <div class="form-group">
+            <label for="age">Age *</label>
+            <input type="number" id="age" name="age" min="18" max="120" placeholder="Enter your age">
+            <div id="ageError" class="error">Please enter a valid age (18-100)</div>
+        </div>
+        
+        <div class="form-group">
+            <label for="occupation">Occupation</label>
+            <input type="text" id="occupation" name="occupation" placeholder="Enter your occupation">
+        </div>
+        
+        <div class="form-group">
+            <label for="comments">Additional Information </label>
+            <textarea id="comments" name="comments" rows="5" placeholder="Enter your Additional Information"></textarea>
+        </div>
+        
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("userForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            
+            document.querySelectorAll(".error").forEach(error => {
+                error.style.display = "none";
+            });
+            
+            // Get form values
+            const fullName = document.getElementById("fullName").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const age = document.getElementById("age").value;
+            const occupation = document.getElementById("occupation").value.trim();
+            const comments = document.getElementById("comments").value.trim();
+            
+            // Validate form
+            let isValid = true;
+            
+            // Validate full name
+            if (!fullName) {
+                document.getElementById("fullNameError").style.display = "block";
+                isValid = false;
+            }
+            
+            // Validate email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email || !emailRegex.test(email)) {
+                document.getElementById("emailError").style.display = "block";
+                isValid = false;
+            }
+            
+            // Validate phone number (simple validation)
+            const phoneRegex = /^\d{10,15}$/;
+            if (!phone || !phoneRegex.test(phone.replace(/[- )(]/g, ''))) {
+                document.getElementById("phoneError").style.display = "block";
+                isValid = false;
+            }
+            
+            // Validate age
+            if (!age || age < 18 || age > 120) {
+                document.getElementById("ageError").style.display = "block";
+                isValid = false;
+            }
+            
+            // If form is valid, store data and redirect
+            if (isValid) {
+                const userData = {
+                    fullName,
+                    email,
+                    phone,
+                    age,
+                    occupation,
+                    comments
+                };
+                
+                // Store data in localStorage
+                localStorage.setItem("userData", JSON.stringify(userData));
+                
+                // Redirect to display page
+                window.location.href = "display.html";
+            }
+        });
+    </script>
+</body>
+</html>

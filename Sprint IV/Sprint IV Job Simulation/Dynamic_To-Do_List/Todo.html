@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            font-size: 3rem;
+        }
+        .task-container {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 75%;
+            margin: auto;
+        }
+        .input-group {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        #taskInput {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+            font-size: 16px;
+        }
+        #addButton {
+            padding: 10px 15px;
+            background-color: #008cff;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        #addButton:hover {
+            background-color: #005fad;
+        }
+        .task-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .task-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .task-text {
+            flex: 1;
+        }
+        .task-buttons button {
+            margin-left: 5px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .edit-btn {
+            background-color: #2196F3;
+            color: white;
+        }
+        .delete-btn {
+            background-color: #f44336;
+            color: white;
+        }
+        .save-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .error-message {
+            color: red;
+            margin-top: 5px;
+            display: none;
+        }
+        .empty-list {
+            text-align: center;
+            color: #777;
+            padding: 10px;
+        }
+        .edit-input {
+            flex: 1;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic To-Do List</h1>
+    
+    <div class="task-container">
+        <div class="input-group">
+            <input type="text" id="taskInput" placeholder="Enter a new task...">
+            <button id="addButton">Add</button>
+        </div>
+        <div id="errorMessage" class="error-message">Please enter a task!</div>
+        
+        <ul id="taskList" class="task-list">
+            <li class="empty-list" id="emptyList">No tasks yet. Add a new task above!</li>
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const taskInput = document.getElementById('taskInput');
+            const addButton = document.getElementById('addButton');
+            const taskList = document.getElementById('taskList');
+            const emptyList = document.getElementById('emptyList');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            // Function to add a new task
+            function addTask() {
+                const taskText = taskInput.value.trim();
+                
+                // Validate input
+                if (!taskText) {
+                    errorMessage.style.display = 'block';
+                    return;
+                }
+                
+                // Check for duplicates
+                const tasks = Array.from(taskList.getElementsByClassName('task-item'));
+                for (const task of tasks) {
+                    const currentTaskText = task.querySelector('.task-text').textContent;
+                    if (currentTaskText === taskText) {
+                        errorMessage.textContent = 'Task already exists!';
+                        errorMessage.style.display = 'block';
+                        return;
+                    }
+                }
+                
+                // Hide error message
+                errorMessage.style.display = 'none';
+                errorMessage.textContent = 'Please enter a task!';
+                
+                // Create new task item
+                const taskItem = document.createElement('li');
+                taskItem.className = 'task-item';
+                
+                const taskTextElement = document.createElement('span');
+                taskTextElement.className = 'task-text';
+                taskTextElement.textContent = taskText;
+                
+                const taskButtons = document.createElement('div');
+                taskButtons.className = 'task-buttons';
+                
+                const editButton = document.createElement('button');
+                editButton.className = 'edit-btn';
+                editButton.textContent = 'Edit';
+                
+                const deleteButton = document.createElement('button');
+                deleteButton.className = 'delete-btn';
+                deleteButton.textContent = 'Delete';
+                
+                taskButtons.appendChild(editButton);
+                taskButtons.appendChild(deleteButton);
+                
+                taskItem.appendChild(taskTextElement);
+                taskItem.appendChild(taskButtons);
+                
+                // Hide empty list message
+                emptyList.style.display = 'none';
+                
+                // Add task to list
+                taskList.appendChild(taskItem);
+                
+                // Clear input
+                taskInput.value = '';
+                
+                // Add event listeners for edit and delete
+                editButton.addEventListener('click', function() {
+                    editTask(taskItem, taskTextElement);
+                });
+                
+                deleteButton.addEventListener('click', function() {
+                    deleteTask(taskItem);
+                });
+            }
+            
+            // Function to edit a task
+            function editTask(taskItem, taskTextElement) {
+                const currentText = taskTextElement.textContent;
+                
+                // Replace text with input field
+                taskTextElement.style.display = 'none';
+                
+                const editInput = document.createElement('input');
+                editInput.type = 'text';
+                editInput.className = 'edit-input';
+                editInput.value = currentText;
+                
+                const saveButton = document.createElement('button');
+                saveButton.className = 'save-btn';
+                saveButton.textContent = 'Save';
+                
+                const buttonContainer = taskItem.querySelector('.task-buttons');
+                const originalButtons = buttonContainer.innerHTML;
+                buttonContainer.innerHTML = '';
+                buttonContainer.appendChild(saveButton);
+                
+                taskItem.insertBefore(editInput, buttonContainer);
+                editInput.focus();
+                
+                // Save edited task
+                saveButton.addEventListener('click', function() {
+                    saveEditedTask(taskItem, editInput, taskTextElement, buttonContainer, originalButtons);
+                });
+                
+                // Also save when Enter key is pressed
+                editInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        saveEditedTask(taskItem, editInput, taskTextElement, buttonContainer, originalButtons);
+                    }
+                });
+            }
+            
+            // Function to save an edited task
+            function saveEditedTask(taskItem, editInput, taskTextElement, buttonContainer, originalButtons) {
+                const newText = editInput.value.trim();
+                
+                // Validate input
+                if (!newText) {
+                    editInput.style.borderColor = 'red';
+                    return;
+                }
+                
+                // Check for duplicates (excluding the current task)
+                const tasks = Array.from(taskList.getElementsByClassName('task-item'));
+                for (const task of tasks) {
+                    if (task !== taskItem) {
+                        const currentTaskText = task.querySelector('.task-text').textContent;
+                        if (currentTaskText === newText) {
+                            editInput.style.borderColor = 'red';
+                            return;
+                        }
+                    }
+                }
+                
+                // Update task text
+                taskTextElement.textContent = newText;
+                taskTextElement.style.display = '';
+                
+                // Restore original buttons
+                buttonContainer.innerHTML = originalButtons;
+                
+                // Remove input field
+                taskItem.removeChild(editInput);
+                
+                // Re-add event listeners
+                const newEditButton = taskItem.querySelector('.edit-btn');
+                const newDeleteButton = taskItem.querySelector('.delete-btn');
+                
+                newEditButton.addEventListener('click', function() {
+                    editTask(taskItem, taskTextElement);
+                });
+                
+                newDeleteButton.addEventListener('click', function() {
+                    deleteTask(taskItem);
+                });
+            }
+            
+            // Function to delete a task
+            function deleteTask(taskItem) {
+                taskList.removeChild(taskItem);
+                
+                // Show empty list message if no tasks
+                if (taskList.getElementsByClassName('task-item').length === 0) {
+                    emptyList.style.display = 'block';
+                }
+            }
+            
+            // Event listener for adding tasks
+            addButton.addEventListener('click', addTask);
+            
+            // Event listener for Enter key
+            taskInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    addTask();
+                }
+            });
+            
+            // Clear error message when input changes
+            taskInput.addEventListener('input', function() {
+                errorMessage.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
