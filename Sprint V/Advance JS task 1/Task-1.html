@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // Task 1: Function vs Arrow Function
+
+// Traditional function syntax
+function squareNumbers(numbers) {
+  const result = [];
+  for (let i = 0; i < numbers.length; i++) {
+    result.push(numbers[i] * numbers[i]);
+  }
+  return result;
+}
+
+// Arrow function syntax
+const squareNumbersArrow = (numbers) => {
+  return numbers.map(num => num * num);
+};
+
+// Testing Task 1
+const numbersToSquare = [1, 2, 3, 4, 5];
+console.log("Task 1 - Traditional function result:", squareNumbers(numbersToSquare));
+console.log("Task 1 - Arrow function result:", squareNumbersArrow(numbersToSquare));
+
+
+// Task 2: Spread (...) Operator
+const mergeObjects = (obj1, obj2, obj3) => {
+  return { ...obj1, ...obj2, ...obj3 };
+};
+
+// Testing Task 2
+const obj1 = { a: 1, b: 2 };
+const obj2 = { c: 3, d: 4 };
+const obj3 = { e: 5, f: 6 };
+console.log("Task 2 - Merged objects:", mergeObjects(obj1, obj2, obj3));
+
+
+// Task 3: Map Objects
+const getStudentScore = (students, studentName) => {
+  const studentMap = new Map();
+  
+  // Store each student's name and score in the Map
+  for (const student of students) {
+    studentMap.set(student.name, student.score);
+  }
+  
+  // Return the score for the given student name
+  return studentMap.get(studentName);
+};
+
+// Testing Task 3
+const students = [
+  { name: 'Alice', score: 85 },
+  { name: 'Bob', score: 92 },
+  { name: 'Charlie', score: 78 }
+];
+console.log("Task 3 - Bob's score:", getStudentScore(students, 'Bob'));
+
+
+// Task 4: Set Objects
+const getUniqueNumbers = (numbers) => {
+  // Create a Set from the array to automatically remove duplicates
+  const uniqueSet = new Set(numbers);
+  
+  // Convert the Set back to an array
+  return Array.from(uniqueSet);
+};
+
+// Testing Task 4
+const numbersWithDuplicates = [1, 2, 2, 3, 4, 4, 5];
+console.log("Task 4 - Unique numbers:", getUniqueNumbers(numbersWithDuplicates));
+
+
+// Task 5: Array Filter
+const filterLongWords = (words) => {
+  return words.filter(word => word.length > 5);
+};
+
+// Testing Task 5
+const words = ['apple', 'banana', 'cherry', 'date', 'elderberry', 'fig', 'grape'];
+console.log("Task 5 - Words with more than 5 letters:", filterLongWords(words));
+
+
+// Task 6: Array reduce
+const calculateProduct = (numbers) => {
+  return numbers.reduce((product, currentNumber) => product * currentNumber, 1);
+};
+
+// Testing Task 6
+const numbersToMultiply = [1, 2, 3, 4, 5];
+console.log("Task 6 - Product of all numbers:", calculateProduct(numbersToMultiply));
+
+
+// Task 7: Array indexOf() and lastIndexOf()
+const findFirstAndLastOccurrence = (array, element) => {
+  const firstIndex = array.indexOf(element);
+  const lastIndex = array.lastIndexOf(element);
+  
+  return { firstIndex, lastIndex };
+};
+
+// Testing Task 7
+const numbers = [1, 2, 3, 2, 4, 2, 5];
+console.log("Task 7 - First and last occurrence of 2:", findFirstAndLastOccurrence(numbers, 2));
+
+
+// Task 8: Array.isArray()
+const checkIsArray = (variable) => {
+  return Array.isArray(variable);
+};
+
+// Testing Task 8
+console.log("Task 8 - Is [1, 2, 3] an array?", checkIsArray([1, 2, 3]));
+console.log("Task 8 - Is 'Hello' an array?", checkIsArray('Hello'));
+
+
+// Task 9: String includes
+const checkWordInSentence = (sentence, word) => {
+  return sentence.includes(word);
+};
+
+// Testing Task 9
+const sentence = 'The quick brown fox jumps over the lazy dog';
+console.log("Task 9 - Is 'fox' in the sentence?", checkWordInSentence(sentence, 'fox'));
+
+
+// Task 10: Array keys()
+const printIndices = (items) => {
+  const keysIterator = items.keys();
+  
+  for (const key of keysIterator) {
+    console.log(key);
+  }
+};
+
+// Testing Task 10
+const fruits = ['apple', 'banana', 'cherry', 'date'];
+console.log("Task 10 - Indices of fruits array:");
+printIndices(fruits);
+</script>
+</html>
