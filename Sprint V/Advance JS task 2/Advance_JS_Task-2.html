@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advance JavaScript Task 2</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body></body>
+  <script>
+    //const axios = require('axios');
+
+    // Task 1: String replaceAll()
+    function replaceAllOccurrences(str, oldSubstr, newSubstr) {
+      return str.replaceAll(oldSubstr, newSubstr);
+    }
+
+    console.log(
+      "String before replacesall() method -> 'apple banana apple grape apple'"
+    );
+    console.log("Task 1 - String replaceAll():");
+    console.log(
+      replaceAllOccurrences("apple banana apple grape apple", "apple", "orange")
+    );
+    // Output: 'orange banana orange grape orange'
+    console.log("---\n");
+
+    // Task 2: Array includes()
+    function checkArrayIncludes(arr, value) {
+      return arr.includes(value);
+    }
+
+    console.log("Task 2 - Array includes():");
+    console.log(checkArrayIncludes(["apple", "banana", "cherry"], "banana"));
+    // Output: true
+    console.log(checkArrayIncludes(["apple", "banana", "cherry"], "orange"));
+    // Output: false
+    console.log("---\n");
+
+   
+
+    // Top-level async function to allow await
+    // async function run() {
+    //   try {
+    //     console.log("Starting to fetch data...");
+    //     const data = await fetchDataFromAPI(
+    //       "https://jsonplaceholder.typicode.com/todos/1"
+    //     );
+    //     console.log("Final data from main function:", data);
+    //   } catch (error) {
+    //     console.error("Error in main function:", error);
+    //   }
+    // }
+
+    // // Run it
+    // run();
+
+     // Task 3: Async, await, promise, fetch
+
+    async function fetchDataFromAPI(url) {
+      try {
+        console.log("Starting to fetch data...");
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log("Data received:", data); // More descriptive log
+        return data;
+      } catch (error) {
+        console.error("Error in fetching data:", error);
+        throw error;
+      }
+    }
+
+    // Better example usage
+    console.log("Task 3 - Async/Await with Fetch:");
+    fetchDataFromAPI("https://jsonplaceholder.typicode.com/todos/1")
+      .then((data) => {
+        console.log("Promise resolved with data:", data); // Explicitly log the data here too
+        console.log("---\n");
+      })
+      .catch((error) => console.error("Failed to fetch:", error));
+
+    // Add this line to ensure you know the code has been executed
+    console.log("Fetch request initiated. Waiting for response...");
+    // Alternative implementation using axios (if available)
+    // Note: In a real environment, you would need to install axios first
+
+    // async function fetchDataWithAxios(url) {
+    //   try {
+    //     const response = await axios.get(url);
+    //     console.log(response.data);
+    //     return response.data;
+    //   } catch (error) {
+    //     console.error("Error fetching data with axios:", error);
+    //     throw error;
+    //   }
+    // }
+    // console.log("Task 3 - Async/Await with Fetch:");
+    // fetchDataWithAxios("https://jsonplaceholder.typicode.com/todos/1")
+    //   .then((data) => {
+    //     console.log("Promise resolved with data:", data); // Explicitly log the data here too
+    //     console.log("---\n");
+    //   })
+    //   .catch((error) => console.error("Failed to fetch:", error));
+
+    // Task 4: Exception Handling
+    function divideTwoNumbers(a, b) {
+      try {
+        if (b === 0) {
+          throw new Error("Division by zero is not allowed.");
+        }
+        return a / b;
+      } catch (error) {
+        return error.message;
+      }
+    }
+
+    // Example usage for Task 4
+    console.log("Task 4 - Exception Handling:");
+    console.log(divideTwoNumbers(4, 2)); // Output: 2
+    console.log(divideTwoNumbers(4, 0)); // Output: 'Division by zero is not allowed.'
+    console.log("---\n");
+
+    // Task 5: Template Literals
+    function formatPersonInfo(name, age) {
+      return `Hello, my name is ${name} and I am ${age} years old.`;
+    }
+
+    // Example usage for Task 5
+    console.log("Task 5 - Template Literals:");
+    console.log(formatPersonInfo("John", 30));
+    // Output: 'Hello, my name is John and I am 30 years old.'
+    console.log("---\n");
+
+    // Task 6: Destructuring Assignment
+    function logPersonProperties(person) {
+      const { name, age, city } = person;
+      console.log(name);
+      console.log(age);
+      console.log(city);
+    }
+
+    // Example usage for Task 6
+    console.log("Task 6 - Destructuring Assignment:");
+    logPersonProperties({ name: "Alice", age: 25, city: "New York" });
+    // Output: 'Alice', '25', 'New York'
+    console.log("---\n");
+
+    // Task 7: Default Parameters
+    function addTwoNumbers(a, b = 10) {
+      return a + b;
+    }
+
+    // Example usage for Task 7
+    console.log("Task 7 - Default Parameters:");
+    console.log(addTwoNumbers(5, 20)); // Output: 25
+    console.log(addTwoNumbers(5)); // Output: 15
+    console.log("---\n");
+
+    // Task 8: Rest Parameters
+    function sumAllArguments(...numbers) {
+      return numbers.reduce((sum, num) => sum + num, 0);
+    }
+
+    // Example usage for Task 8
+    console.log("Task 8 - Rest Parameters:");
+    console.log(sumAllArguments(1, 2, 3, 4, 5)); // Output: 15
+    console.log(sumAllArguments(10, 20, 30)); // Output: 60
+    console.log("---\n");
+
+    // Task 9: Sum of Numbers using reduce
+    function sumArrayNumbers(numbers) {
+      return numbers.reduce((sum, num) => sum + num, 0);
+    }
+
+    // Example usage for Task 9
+    console.log("Task 9 - Sum using reduce():");
+    console.log(sumArrayNumbers([1, 2, 3, 4, 5])); // Output: 15
+    console.log(sumArrayNumbers([10, 20, 30, 40])); // Output: 100
+    console.log("---\n");
+
+    // Additional test cases and demonstrations
+    console.log("=== Additional Test Cases ===\n");
+
+    // More comprehensive testing
+    console.log("Additional Test: replaceAll with edge cases");
+    console.log(replaceAllOccurrences("", "test", "replace")); // Empty string
+    console.log(replaceAllOccurrences("no match here", "xyz", "abc")); // No matches
+    console.log(replaceAllOccurrences("aaaa", "a", "b")); // All matches
+
+    console.log("\nAdditional Test: includes with different data types");
+    console.log(checkArrayIncludes([1, 2, 3, "hello", true], "hello"));
+    console.log(checkArrayIncludes([1, 2, 3], "1")); // String vs number
+
+    console.log("\nAdditional Test: Exception handling with different errors");
+    console.log(divideTwoNumbers("not a number", 5));
+    console.log(divideTwoNumbers(null, undefined));
+
+    console.log("\nAdditional Test: Destructuring with missing properties");
+    try {
+      logPersonProperties({ name: "Bob", age: 30 }); // Missing city
+    } catch (error) {
+      console.log("Error:", error.message);
+    }
+
+    console.log("\nAdditional Test: Rest parameters with no arguments");
+    console.log(sumAllArguments()); // Should return 0
+  </script>
+</html>
