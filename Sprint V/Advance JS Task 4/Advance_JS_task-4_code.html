@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advance JS Task 4</title>
+</head>
+<body>
+  
+</body>
+
+<script>
+  // Task 1: Find First Positive Number
+function findFirstPositiveNumber(numbers) {
+  return numbers.find(num => num > 0);
+}
+
+// Example
+console.log("Task 1 Result:", findFirstPositiveNumber([-5, -3, 0, 9, 2])); // Output: 9
+
+// Task 2: Find Book by Title
+function findBookByTitle(books, title) {
+  return books.find(book => book.title === title);
+}
+
+// Example
+const books = [
+  { title: '1984', author: 'George Orwell' },
+  { title: 'To Kill a Mockingbird', author: 'Harper Lee' },
+  { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald' }
+];
+console.log("Task 2 Result:", findBookByTitle(books, '1984')); 
+// Output: { title: '1984', author: 'George Orwell' }
+
+// Task 3: Find Employee by ID
+function findEmployeeById(employees, id) {
+  return employees.find(employee => employee.id === id);
+}
+
+// Example
+const employees = [
+  { id: 1, name: 'Alice', position: 'Manager' },
+  { id: 2, name: 'Bob', position: 'Engineer' },
+  { id: 3, name: 'Charlie', position: 'Technician' }
+];
+console.log("Task 3 Result:", findEmployeeById(employees, 2));
+// Output: { id: 2, name: 'Bob', position: 'Engineer' }
+
+// Task 4: Find First Prime Number
+function findFirstPrimeNumber(numbers) {
+  // Helper function to check if a number is prime
+  function isPrime(num) {
+    if (num <= 1) return false;
+    if (num <= 3) return true;
+    
+    if (num % 2 === 0 || num % 3 === 0) return false;
+    
+    let i = 5;
+    while (i * i <= num) {
+      if (num % i === 0 || num % (i + 2) === 0) return false;
+      i += 6;
+    }
+    
+    return true;
+  }
+  
+  return numbers.find(num => isPrime(num));
+}
+
+// Example
+console.log("Task 4 Result:", findFirstPrimeNumber([4, 6, 8, 9, 11, 15])); // Output: 11
+
+// Task 5: Destructuring and Template Literals
+function formatPersonInfo(person) {
+  const { firstName, lastName, age } = person;
+  return `${firstName} ${lastName} is ${age} years old.`;
+}
+
+// Example
+console.log("Task 5 Result:", formatPersonInfo({ firstName: 'John', lastName: 'Doe', age: 30 }));
+// Output: 'John Doe is 30 years old.'
+
+// Task 6: Array Methods and Arrow Functions
+function squareEvenNumbers(numbers) {
+  return numbers
+    .filter(num => num % 2 === 0)
+    .map(num => num * num);
+}
+
+// Example
+console.log("Task 6 Result:", squareEvenNumbers([1, 2, 3, 4, 5, 6])); 
+// Output: [4, 16, 36]
+
+// Task 7: Default Parameters and Rest Parameters
+function joinWords(separator = ',', ...words) {
+  return words.join(separator);
+}
+
+// Examples
+console.log("Task 7 Result 1:", joinWords('-', 'apple', 'banana', 'cherry'));
+// Output: 'apple-banana-cherry'
+console.log("Task 7 Result 2:", joinWords(undefined, 'apple', 'banana', 'cherry'));
+// Output: 'apple,banana,cherry'
+
+// Task 8: Spread Operator and Array Methods
+function getUniqueElements(arr1, arr2) {
+  return [...new Set([...arr1, ...arr2])];
+}
+
+// Example
+console.log("Task 8 Result:", getUniqueElements([1, 2, 3], [3, 4, 5]));
+// Output: [1, 2, 3, 4, 5]
+
+// Task 9: Promises and Async/Await
+async function fetchTodo() {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+}
+
+// Example
+console.log("Task 9 Result: Call fetchTodo() to see result");
+// fetchTodo().then(result => console.log(result));
+// Output: {userId: 1, id: 1, title: "delectus aut autem", completed: false}
+
+// Task 10: Array Methods, Destructuring, and Reduce
+function getProductsAboveAveragePrice(products) {
+  // First, calculate the total price and count using reduce
+  const { total, count } = products.reduce(
+    (acc, { price }) => {
+      return {
+        total: acc.total + price,
+        count: acc.count + 1
+      };
+    }, 
+    { total: 0, count: 0 }
+  );
+  
+  // Calculate the average price
+  const averagePrice = total / count;
+  
+  // Return products with price greater than average
+  return products
+    .filter(product => product.price > averagePrice)
+    .map(product => product.name);
+}
+
+// Example
+const products = [
+  { name: 'Laptop', price: 1000 },
+  { name: 'Phone', price: 500 },
+  { name: 'Tablet', price: 700 }
+];
+console.log("Task 10 Result:", getProductsAboveAveragePrice(products));
+// Output: ['Laptop']
+</script>
+</html>
