@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Name To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Student Name Manager</h1>
+            <p>Manage your student list efficiently</p>
+        </div>
+
+        <div class="input-section">
+            <div class="input-container">
+                <input 
+                    type="text" 
+                    id="studentInput" 
+                    placeholder="Enter student name..."
+                    maxlength="50"
+                >
+                <button id="addBtn">Add Student</button>
+            </div>
+            <div class="error-message" id="errorMessage">
+                Please enter a valid student name!
+            </div>
+
+            <div class="controls">
+                <div class="student-count">
+                    Total Students: <span id="studentCount">0</span>
+                </div>
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search students..."
+                >
+                <button id="clearAllBtn">Clear All</button>
+            </div>
+        </div>
+
+        <div class="list-section">
+            <ul id="studentList">
+                <!-- Student items will be dynamically added here -->
+            </ul>
+            <div class="empty-state" id="emptyState">
+                <h3>No students added yet</h3>
+                <p>Add your first student using the input field above</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js">
+        
+    </script>
+</body>
+</html>
