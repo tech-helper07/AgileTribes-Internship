@@ -1,0 +1,35 @@
+.nav1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 48, 104);
+  padding: 20px 15px;
+}
+
+.nav1 > h1 {
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+}
+
+.nav1 ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 58%;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.nav1 ul a {
+  font-size: 20px;
+  font-weight: 300;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+.nav1 ul a:hover {
+  color: #555;
+}
