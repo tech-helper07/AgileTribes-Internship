@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.dashboard-content {
+  padding: 2rem;
+  background-color: #ffffffcc;
+  border-radius: 12px;
+  margin: 1rem;
+}
+
+h1 {
+  color: #ffffff;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.Button {
+  text-align: center;
+  margin: auto;
+  display: block;
+  justify-content: center;
+  cursor: pointer;
+}
