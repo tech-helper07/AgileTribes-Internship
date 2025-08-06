@@ -1,0 +1,111 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john@example.com",
+      "age": 30,
+      "city": "New York"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "age": 25,
+      "city": "Los Angeles"
+    },
+    {
+      "name": "Mike Johnson",
+      "email": "mike@example.com",
+      "age": 35,
+      "city": "Chicago",
+      "id": "3"
+    },
+    {
+      "id": "f1dd",
+      "name": "Ravikumar",
+      "email": "Ravikumar@gmail.com",
+      "age": 18,
+      "city": "Chennai"
+    },
+    {
+      "id": "a352",
+      "name": "ARUN KUAMER",
+      "email": "ARUNKUMAR@GMAIL.COM",
+      "age": 21,
+      "city": "NAGERCOIL"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Laptop",
+      "price": 999.99,
+      "category": "Electronics"
+    },
+    {
+      "id": "2",
+      "name": "Coffee Mug",
+      "price": 15.99,
+      "category": "Home"
+    },
+    {
+      "id": "3",
+      "name": "Running Shoes",
+      "price": 89.99,
+      "category": "Sports"
+    },
+    {
+      "id": "4",
+      "name": "Smartphone",
+      "price": 699.99,
+      "category": "Electronics"
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "title": "Getting Started with React",
+      "content": "React is a popular JavaScript library for building user interfaces...",
+      "author": "John Doe",
+      "date": "2024-01-15"
+    },
+    {
+      "id": "2",
+      "title": "Understanding JSON Server",
+      "content": "JSON Server is a great tool for creating fake REST APIs...",
+      "author": "Jane Smith",
+      "date": "2024-01-16"
+    },
+    {
+      "id": "25b8",
+      "title": "AI Awesome",
+      "content": "AI Takes over all Coding sector",
+      "author": "Sanjai N",
+      "date": "2025-08-06"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "postId": 1,
+      "author": "Alice",
+      "text": "Great tutorial! Very helpful.",
+      "date": "2024-01-15"
+    },
+    {
+      "id": "2",
+      "postId": 1,
+      "author": "Bob",
+      "text": "Thanks for sharing this.",
+      "date": "2024-01-16"
+    },
+    {
+      "id": "3",
+      "postId": 2,
+      "author": "Charlie",
+      "text": "JSON Server is amazing!",
+      "date": "2024-01-17"
+    }
+  ]
+}
